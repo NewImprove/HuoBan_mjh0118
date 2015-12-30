@@ -35,7 +35,7 @@ NSString *_iOSSizeOtherUser;
     NSLog(@"打印传递用户ID%@",self.dicOtherUser);
     
 //    self.title = self.dicOtherUser[@"name"];
-
+#pragma  设置navi
     
     //上放导航栏
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:21.0/255 green:30.0/255 blue:40.0/255 alpha:1]];
@@ -47,6 +47,7 @@ NSString *_iOSSizeOtherUser;
     [self.navigationItem.leftBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19],NSForegroundColorAttributeName :[UIColor colorWithRed:238.0/255 green:238.0/255 blue:238.0/255 alpha:1]} forState:UIControlStateNormal];
     
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:238.0/255 green:238.0/255 blue:238.0/255 alpha:1];
+    
     
     self.title = self.dicOtherUser[@"name"];
     

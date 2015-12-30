@@ -11,20 +11,25 @@
 @implementation DataModel
 
 
--(id)init{
-    
+
++ (instancetype) defaultUserBaseInfo {
+    static DataModel * _defaultUserInfo = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _defaultUserInfo = [[self alloc] init];
+    });
+    return _defaultUserInfo;
+}
+
+- (instancetype)init
+{
     self = [super init];
-    
-    if(self){
-        
-        
+    if (self) {
         self.userInfomation = [[UserInfomation alloc] init];
         self.remindMessage = [[RemindMessage alloc] init];
         
         [self loadUserInfomation];
-    
     }
-
     return self;
 }
 

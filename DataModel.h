@@ -20,6 +20,6 @@
 
 -(void)saveUserInfomation;
 -(void)loadUserInfomation;
-
++ (instancetype) defaultUserBaseInfo;
 
 @end

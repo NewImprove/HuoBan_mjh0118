@@ -11,13 +11,39 @@
 #import "CommonCrypto/CommonDigest.h"
 #import "CommonBase64.h"
 
-//#define HTTPAddHuoBan  @"api.huoban.io:8877"
+#define HTTPAddHuoBan  @"api.huoban.io:8877"
 //服务器测试地址
-#define HTTPAddHuoBan  @"123.57.33.133:8888"
+//#define HTTPAddHuoBan  @"123.57.33.133:8888"
 
 @implementation HttpClassSelf
 
 #pragma mark POST
+
+
+
+//+ (void) httpGetRequestWithPath:(NSString *) path params:(NSDictionary *)params CallBackYES:(CallBackYES)BlockYES CallBackNO:(CallBackNO)BlockNO {
+//    
+//    //设置主机名
+//    MKNetworkEngine *engine = [[MKNetworkEngine alloc]initWithHostName:HTTPAddHuoBan customHeaderFields:nil ];
+//    MKNetworkOperation *op = [engine operationWithPath:path params:params httpMethod:@"GET"];
+//    //请求闭包
+//    [op addCompletionHandler:BlockYES errorHandler:BlockNO];
+//    //发起网络请求
+//    [engine enqueueOperation:op];
+//}
+//
+//+ (void) httpPostRequestWithPath:(NSString *) path params:(NSDictionary *)params CallBackYES:(CallBackYES)BlockYES CallBackNO:(CallBackNO)BlockNO {
+//    
+//    //设置主机名
+//    MKNetworkEngine *engine = [[MKNetworkEngine alloc]initWithHostName:HTTPAddHuoBan customHeaderFields:nil ];
+//    MKNetworkOperation *op = [engine operationWithPath:path params:params httpMethod:@"Post"];
+//    //请求闭包
+//    [op addCompletionHandler:BlockYES errorHandler:BlockNO];
+//    //发起网络请求
+//    [engine enqueueOperation:op];
+//}
+
+
 
 //登陆
 -(void)loginSetMobile:(NSString *)mobile pwd:(NSString *)pwd umengid:(NSString *)umengid mobibuild:(NSString *)mobibuild mobitype:(NSString *)mobitype CallBackYES:(CallBackYES)BlockYES CallBackNO:(CallBackNO)BlockNO{
@@ -36,6 +62,7 @@
     [postBody setValue:mobitype forKey:@"mobitype"];
     
     NSLog(@"%@",umengid);
+    NSLog(@"postBody:%@",postBody);
     
     //请求地址，参数
     MKNetworkOperation *op = [engine operationWithPath:path params:postBody httpMethod:@"POST"];
@@ -719,6 +746,27 @@
     [engine enqueueOperation:op];
     
 }
+
+
+#warning 我
+//我V@
+-(void)getUserSelfInfoByUserID:(NSString *)strUserID page:(int)pageInt num:(int)numInt token:(NSString *)strToken CallBackYES:(CallBackYES)BlockYES CallBackNO:(CallBackNO)BlockNO{
+    ///v2/profile/u-{user}/page-{page}/num-{num}/{token}
+    NSString *path = [[NSString alloc] initWithFormat:@"/v2/profile/u-%@/page-%i/num-%i/%@",strUserID,pageInt,numInt,strToken];
+    
+    MKNetworkEngine *engine = [[MKNetworkEngine alloc] initWithHostName:HTTPAddHuoBan customHeaderFields:nil];
+    
+    MKNetworkOperation *op = [engine operationWithPath:path params:nil httpMethod:@"GET"];
+    
+    [op addCompletionHandler:BlockYES errorHandler:BlockNO];
+    
+    [engine enqueueOperation:op];
+
+    //http://123.57.33.133:8888/v2/profile/u-5620a7b7b5a2a7a8fe41b7eb/page-0/num-10/5620a7b7b5a2a7a8fe41b7eb
+    //http://123.57.33.133:8888/v2/profile/567b9019acaad970fc37c754/page-0/num-0/567b9019acaad970fc37c754
+}
+
+
 //md5加密
 -(NSString *)MD5ByAStr:(NSString *)aSourceStr {
     const char* cStr = [aSourceStr UTF8String];

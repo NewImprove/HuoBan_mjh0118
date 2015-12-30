@@ -185,7 +185,6 @@
 		006F50E51BB13E5D00251A62 /* JoinProjectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006F50E41BB13E5D00251A62 /* JoinProjectTableViewController.m */; };
 		006F50E81BB1518D00251A62 /* PayForProjectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006F50E71BB1518D00251A62 /* PayForProjectTableViewController.m */; };
 		006F51081BB18D8200251A62 /* CreateDynamicNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 006F51071BB18D8200251A62 /* CreateDynamicNavigationController.m */; };
-		007D04191C1E5E8100AA9645 /* UserSelfMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007D04181C1E5E8100AA9645 /* UserSelfMessageViewController.m */; };
 		007D041E1C1E6E2100AA9645 /* DeleteDynamic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 007D041C1C1E6E2100AA9645 /* DeleteDynamic@2x.png */; };
 		007D041F1C1E6E2100AA9645 /* DeleteDynamic@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 007D041D1C1E6E2100AA9645 /* DeleteDynamic@3x.png */; };
 		007D04231C1E9F8D00AA9645 /* OneProjectDynamicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 007D04221C1E9F8D00AA9645 /* OneProjectDynamicTableViewController.m */; };
@@ -357,6 +356,20 @@
 		00FB16331C22B922006DB174 /* RemindTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB16321C22B922006DB174 /* RemindTableViewCell.m */; };
 		00FB16371C22D88A006DB174 /* morePreson@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FB16351C22D88A006DB174 /* morePreson@2x.png */; };
 		00FB16381C22D88A006DB174 /* morePreson@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FB16361C22D88A006DB174 /* morePreson@3x.png */; };
+		9C72ED8B1C32791C00511A57 /* huobanUserBaseInfoAllProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C72ED801C32791C00511A57 /* huobanUserBaseInfoAllProject.m */; };
+		9C72ED8C1C32791C00511A57 /* huobanUserBaseInfoCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C72ED821C32791C00511A57 /* huobanUserBaseInfoCreator.m */; };
+		9C72ED8D1C32791C00511A57 /* huobanUserBaseInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C72ED841C32791C00511A57 /* huobanUserBaseInfoData.m */; };
+		9C72ED8E1C32791C00511A57 /* huobanUserBaseInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C72ED861C32791C00511A57 /* huobanUserBaseInfoModel.m */; };
+		9C72ED8F1C32791C00511A57 /* huobanUserBaseInfoPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C72ED881C32791C00511A57 /* huobanUserBaseInfoPost.m */; };
+		9C72ED901C32791C00511A57 /* huobanUserBaseInfoProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C72ED8A1C32791C00511A57 /* huobanUserBaseInfoProject.m */; };
+		9C72EDAE1C327ECA00511A57 /* edit personal info.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDA61C327ECA00511A57 /* edit personal info.png */; };
+		9C72EDAF1C327ECA00511A57 /* edit personal info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDA71C327ECA00511A57 /* edit personal info@3x.png */; };
+		9C72EDB01C327ECA00511A57 /* 展开提醒.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDA81C327ECA00511A57 /* 展开提醒.png */; };
+		9C72EDB11C327ECA00511A57 /* 展开提醒@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDA91C327ECA00511A57 /* 展开提醒@3x.png */; };
+		9C72EDB21C327ECA00511A57 /* 我_私信.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDAA1C327ECA00511A57 /* 我_私信.png */; };
+		9C72EDB31C327ECA00511A57 /* 我_私信@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDAB1C327ECA00511A57 /* 我_私信@3x.png */; };
+		9C72EDB41C327ECA00511A57 /* 系统设置.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDAC1C327ECA00511A57 /* 系统设置.png */; };
+		9C72EDB51C327ECA00511A57 /* 系统设置@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDAD1C327ECA00511A57 /* 系统设置@3x.png */; };
 		9C9D7A4F1C2BEC5000E1A21D /* huobanLoginGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7A4A1C2BEC5000E1A21D /* huobanLoginGuideViewController.m */; };
 		9C9D7A501C2BEC5000E1A21D /* huobanLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7A4C1C2BEC5000E1A21D /* huobanLoginViewController.m */; };
 		9C9D7A511C2BEC5000E1A21D /* huobanRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7A4E1C2BEC5000E1A21D /* huobanRegisterViewController.m */; };
@@ -369,6 +382,14 @@
 		9C9D7A631C2BEDD200E1A21D /* 可点击确认@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9D7A5B1C2BEDD200E1A21D /* 可点击确认@3x.png */; };
 		9C9D7A641C2BEDD200E1A21D /* 我_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9D7A5C1C2BEDD200E1A21D /* 我_back@2x.png */; };
 		9C9D7A651C2BEDD200E1A21D /* 我_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9D7A5D1C2BEDD200E1A21D /* 我_back@3x.png */; };
+		9C9D7A831C311DE500E1A21D /* UserHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7A821C311DE500E1A21D /* UserHeaderView.m */; };
+		9C9D7A861C311E2D00E1A21D /* UserOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7A851C311E2D00E1A21D /* UserOption.m */; };
+		9C9D7A8B1C311E7A00E1A21D /* UserNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7A881C311E7A00E1A21D /* UserNewsTableViewCell.m */; };
+		9C9D7A8C1C311E7A00E1A21D /* UserObjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7A8A1C311E7A00E1A21D /* UserObjectTableViewCell.m */; };
+		9C9D7A921C31205200E1A21D /* UserSelfMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7A911C31205200E1A21D /* UserSelfMessageViewController.m */; };
+		9C9D7A981C3142DC00E1A21D /* HuoBanUserProjectData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7A951C3142DC00E1A21D /* HuoBanUserProjectData.m */; };
+		9C9D7A991C3142DC00E1A21D /* HuoBanUserProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7A971C3142DC00E1A21D /* HuoBanUserProjectModel.m */; };
+		9C9D7AC41C325CC600E1A21D /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7AC31C325CC600E1A21D /* HttpTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -698,8 +719,6 @@
 		006F50F61BB18C4D00251A62 /* CreateDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateDynamicViewController.h; sourceTree = "<group>"; };
 		006F51061BB18D8200251A62 /* CreateDynamicNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateDynamicNavigationController.h; sourceTree = "<group>"; };
 		006F51071BB18D8200251A62 /* CreateDynamicNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateDynamicNavigationController.m; sourceTree = "<group>"; };
-		007D04171C1E5E8100AA9645 /* UserSelfMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSelfMessageViewController.h; sourceTree = SOURCE_ROOT; };
-		007D04181C1E5E8100AA9645 /* UserSelfMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSelfMessageViewController.m; sourceTree = SOURCE_ROOT; };
 		007D041C1C1E6E2100AA9645 /* DeleteDynamic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DeleteDynamic@2x.png"; sourceTree = "<group>"; };
 		007D041D1C1E6E2100AA9645 /* DeleteDynamic@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DeleteDynamic@3x.png"; sourceTree = "<group>"; };
 		007D04211C1E9F8D00AA9645 /* OneProjectDynamicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneProjectDynamicTableViewController.h; sourceTree = "<group>"; };
@@ -942,6 +961,26 @@
 		00FB16321C22B922006DB174 /* RemindTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindTableViewCell.m; sourceTree = "<group>"; };
 		00FB16351C22D88A006DB174 /* morePreson@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "morePreson@2x.png"; sourceTree = "<group>"; };
 		00FB16361C22D88A006DB174 /* morePreson@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "morePreson@3x.png"; sourceTree = "<group>"; };
+		9C72ED7F1C32791C00511A57 /* huobanUserBaseInfoAllProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huobanUserBaseInfoAllProject.h; sourceTree = "<group>"; };
+		9C72ED801C32791C00511A57 /* huobanUserBaseInfoAllProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = huobanUserBaseInfoAllProject.m; sourceTree = "<group>"; };
+		9C72ED811C32791C00511A57 /* huobanUserBaseInfoCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huobanUserBaseInfoCreator.h; sourceTree = "<group>"; };
+		9C72ED821C32791C00511A57 /* huobanUserBaseInfoCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = huobanUserBaseInfoCreator.m; sourceTree = "<group>"; };
+		9C72ED831C32791C00511A57 /* huobanUserBaseInfoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huobanUserBaseInfoData.h; sourceTree = "<group>"; };
+		9C72ED841C32791C00511A57 /* huobanUserBaseInfoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = huobanUserBaseInfoData.m; sourceTree = "<group>"; };
+		9C72ED851C32791C00511A57 /* huobanUserBaseInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huobanUserBaseInfoModel.h; sourceTree = "<group>"; };
+		9C72ED861C32791C00511A57 /* huobanUserBaseInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = huobanUserBaseInfoModel.m; sourceTree = "<group>"; };
+		9C72ED871C32791C00511A57 /* huobanUserBaseInfoPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huobanUserBaseInfoPost.h; sourceTree = "<group>"; };
+		9C72ED881C32791C00511A57 /* huobanUserBaseInfoPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = huobanUserBaseInfoPost.m; sourceTree = "<group>"; };
+		9C72ED891C32791C00511A57 /* huobanUserBaseInfoProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huobanUserBaseInfoProject.h; sourceTree = "<group>"; };
+		9C72ED8A1C32791C00511A57 /* huobanUserBaseInfoProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = huobanUserBaseInfoProject.m; sourceTree = "<group>"; };
+		9C72EDA61C327ECA00511A57 /* edit personal info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit personal info.png"; sourceTree = "<group>"; };
+		9C72EDA71C327ECA00511A57 /* edit personal info@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit personal info@3x.png"; sourceTree = "<group>"; };
+		9C72EDA81C327ECA00511A57 /* 展开提醒.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "展开提醒.png"; sourceTree = "<group>"; };
+		9C72EDA91C327ECA00511A57 /* 展开提醒@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "展开提醒@3x.png"; sourceTree = "<group>"; };
+		9C72EDAA1C327ECA00511A57 /* 我_私信.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我_私信.png"; sourceTree = "<group>"; };
+		9C72EDAB1C327ECA00511A57 /* 我_私信@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我_私信@3x.png"; sourceTree = "<group>"; };
+		9C72EDAC1C327ECA00511A57 /* 系统设置.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "系统设置.png"; sourceTree = "<group>"; };
+		9C72EDAD1C327ECA00511A57 /* 系统设置@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "系统设置@3x.png"; sourceTree = "<group>"; };
 		9C9D7A491C2BEC5000E1A21D /* huobanLoginGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huobanLoginGuideViewController.h; sourceTree = "<group>"; };
 		9C9D7A4A1C2BEC5000E1A21D /* huobanLoginGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = huobanLoginGuideViewController.m; sourceTree = "<group>"; };
 		9C9D7A4B1C2BEC5000E1A21D /* huobanLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huobanLoginViewController.h; sourceTree = "<group>"; };
@@ -958,6 +997,22 @@
 		9C9D7A5B1C2BEDD200E1A21D /* 可点击确认@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "可点击确认@3x.png"; sourceTree = "<group>"; };
 		9C9D7A5C1C2BEDD200E1A21D /* 我_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我_back@2x.png"; sourceTree = "<group>"; };
 		9C9D7A5D1C2BEDD200E1A21D /* 我_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我_back@3x.png"; sourceTree = "<group>"; };
+		9C9D7A811C311DE400E1A21D /* UserHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHeaderView.h; sourceTree = "<group>"; };
+		9C9D7A821C311DE500E1A21D /* UserHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHeaderView.m; sourceTree = "<group>"; };
+		9C9D7A841C311E2D00E1A21D /* UserOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOption.h; sourceTree = "<group>"; };
+		9C9D7A851C311E2D00E1A21D /* UserOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserOption.m; sourceTree = "<group>"; };
+		9C9D7A871C311E7A00E1A21D /* UserNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserNewsTableViewCell.h; sourceTree = "<group>"; };
+		9C9D7A881C311E7A00E1A21D /* UserNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserNewsTableViewCell.m; sourceTree = "<group>"; };
+		9C9D7A891C311E7A00E1A21D /* UserObjectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserObjectTableViewCell.h; sourceTree = "<group>"; };
+		9C9D7A8A1C311E7A00E1A21D /* UserObjectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserObjectTableViewCell.m; sourceTree = "<group>"; };
+		9C9D7A901C31205200E1A21D /* UserSelfMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSelfMessageViewController.h; sourceTree = "<group>"; };
+		9C9D7A911C31205200E1A21D /* UserSelfMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSelfMessageViewController.m; sourceTree = "<group>"; };
+		9C9D7A941C3142DC00E1A21D /* HuoBanUserProjectData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuoBanUserProjectData.h; sourceTree = "<group>"; };
+		9C9D7A951C3142DC00E1A21D /* HuoBanUserProjectData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuoBanUserProjectData.m; sourceTree = "<group>"; };
+		9C9D7A961C3142DC00E1A21D /* HuoBanUserProjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuoBanUserProjectModel.h; sourceTree = "<group>"; };
+		9C9D7A971C3142DC00E1A21D /* HuoBanUserProjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuoBanUserProjectModel.m; sourceTree = "<group>"; };
+		9C9D7AC21C325CC600E1A21D /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
+		9C9D7AC31C325CC600E1A21D /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1433,6 +1488,8 @@
 		0041AC861B8EB36700548563 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				9C9D7AC21C325CC600E1A21D /* HttpTool.h */,
+				9C9D7AC31C325CC600E1A21D /* HttpTool.m */,
 				0041AC8E1B8EB71100548563 /* ToolClass.h */,
 				0041AC8F1B8EB71100548563 /* ToolClass.m */,
 				00BF0FE91BA1898E00C0383A /* HttpClassSelf.h */,
@@ -1681,6 +1738,7 @@
 		006683C41B882EB700D1D5B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9C72EDA51C327ECA00511A57 /* icon */,
 				9C9D7A551C2BEDA500E1A21D /* 登录IconNew */,
 				0042FED81C0EA5E6006381FA /* payChoseButton */,
 				0042FED31C0EA0AB006381FA /* payBack */,
@@ -1898,8 +1956,6 @@
 		007D041A1C1E61BA00AA9645 /* 「我」新UI */ = {
 			isa = PBXGroup;
 			children = (
-				007D04171C1E5E8100AA9645 /* UserSelfMessageViewController.h */,
-				007D04181C1E5E8100AA9645 /* UserSelfMessageViewController.m */,
 			);
 			name = "「我」新UI";
 			sourceTree = "<group>";
@@ -2428,6 +2484,7 @@
 		00CA63A01B8C3C6A000FA500 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				9C72ED7E1C32791C00511A57 /* huobanUserBaseInfo */,
 				006CBF001BB014B300FED25D /* cellDataModel */,
 				00CA63A41B8C3CA3000FA500 /* CellList.h */,
 				00CA63A51B8C3CA3000FA500 /* CellList.m */,
@@ -2679,6 +2736,40 @@
 			name = "「详情」更多";
 			sourceTree = "<group>";
 		};
+		9C72ED7E1C32791C00511A57 /* huobanUserBaseInfo */ = {
+			isa = PBXGroup;
+			children = (
+				9C72ED7F1C32791C00511A57 /* huobanUserBaseInfoAllProject.h */,
+				9C72ED801C32791C00511A57 /* huobanUserBaseInfoAllProject.m */,
+				9C72ED811C32791C00511A57 /* huobanUserBaseInfoCreator.h */,
+				9C72ED821C32791C00511A57 /* huobanUserBaseInfoCreator.m */,
+				9C72ED831C32791C00511A57 /* huobanUserBaseInfoData.h */,
+				9C72ED841C32791C00511A57 /* huobanUserBaseInfoData.m */,
+				9C72ED851C32791C00511A57 /* huobanUserBaseInfoModel.h */,
+				9C72ED861C32791C00511A57 /* huobanUserBaseInfoModel.m */,
+				9C72ED871C32791C00511A57 /* huobanUserBaseInfoPost.h */,
+				9C72ED881C32791C00511A57 /* huobanUserBaseInfoPost.m */,
+				9C72ED891C32791C00511A57 /* huobanUserBaseInfoProject.h */,
+				9C72ED8A1C32791C00511A57 /* huobanUserBaseInfoProject.m */,
+			);
+			path = huobanUserBaseInfo;
+			sourceTree = "<group>";
+		};
+		9C72EDA51C327ECA00511A57 /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				9C72EDA61C327ECA00511A57 /* edit personal info.png */,
+				9C72EDA71C327ECA00511A57 /* edit personal info@3x.png */,
+				9C72EDA81C327ECA00511A57 /* 展开提醒.png */,
+				9C72EDA91C327ECA00511A57 /* 展开提醒@3x.png */,
+				9C72EDAA1C327ECA00511A57 /* 我_私信.png */,
+				9C72EDAB1C327ECA00511A57 /* 我_私信@3x.png */,
+				9C72EDAC1C327ECA00511A57 /* 系统设置.png */,
+				9C72EDAD1C327ECA00511A57 /* 系统设置@3x.png */,
+			);
+			path = icon;
+			sourceTree = "<group>";
+		};
 		9C9D7A481C2BEC5000E1A21D /* 登录New */ = {
 			isa = PBXGroup;
 			children = (
@@ -2710,24 +2801,30 @@
 		9C9D7A661C2BEF3F00E1A21D /* 我New */ = {
 			isa = PBXGroup;
 			children = (
-				9C9D7A7D1C2BF19A00E1A21D /* 我New */,
+				9C9D7A931C3142B700E1A21D /* HuoBanUserProjectModel */,
+				9C9D7A7D1C2BF19A00E1A21D /* 我Controller */,
 			);
 			name = "我New";
 			sourceTree = "<group>";
 		};
-		9C9D7A7D1C2BF19A00E1A21D /* 我New */ = {
+		9C9D7A7D1C2BF19A00E1A21D /* 我Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9C9D7A901C31205200E1A21D /* UserSelfMessageViewController.h */,
+				9C9D7A911C31205200E1A21D /* UserSelfMessageViewController.m */,
 				9C9D7A7E1C2BF19A00E1A21D /* UserHeaderView */,
 				9C9D7A7F1C2BF19A00E1A21D /* UserOptionsCell */,
 				9C9D7A801C2BF19A00E1A21D /* UserOptionView */,
 			);
+			name = "我Controller";
 			path = "我New";
 			sourceTree = "<group>";
 		};
 		9C9D7A7E1C2BF19A00E1A21D /* UserHeaderView */ = {
 			isa = PBXGroup;
 			children = (
+				9C9D7A811C311DE400E1A21D /* UserHeaderView.h */,
+				9C9D7A821C311DE500E1A21D /* UserHeaderView.m */,
 			);
 			path = UserHeaderView;
 			sourceTree = "<group>";
@@ -2735,6 +2832,10 @@
 		9C9D7A7F1C2BF19A00E1A21D /* UserOptionsCell */ = {
 			isa = PBXGroup;
 			children = (
+				9C9D7A871C311E7A00E1A21D /* UserNewsTableViewCell.h */,
+				9C9D7A881C311E7A00E1A21D /* UserNewsTableViewCell.m */,
+				9C9D7A891C311E7A00E1A21D /* UserObjectTableViewCell.h */,
+				9C9D7A8A1C311E7A00E1A21D /* UserObjectTableViewCell.m */,
 			);
 			path = UserOptionsCell;
 			sourceTree = "<group>";
@@ -2742,8 +2843,21 @@
 		9C9D7A801C2BF19A00E1A21D /* UserOptionView */ = {
 			isa = PBXGroup;
 			children = (
+				9C9D7A841C311E2D00E1A21D /* UserOption.h */,
+				9C9D7A851C311E2D00E1A21D /* UserOption.m */,
 			);
 			path = UserOptionView;
+			sourceTree = "<group>";
+		};
+		9C9D7A931C3142B700E1A21D /* HuoBanUserProjectModel */ = {
+			isa = PBXGroup;
+			children = (
+				9C9D7A941C3142DC00E1A21D /* HuoBanUserProjectData.h */,
+				9C9D7A951C3142DC00E1A21D /* HuoBanUserProjectData.m */,
+				9C9D7A961C3142DC00E1A21D /* HuoBanUserProjectModel.h */,
+				9C9D7A971C3142DC00E1A21D /* HuoBanUserProjectModel.m */,
+			);
+			name = HuoBanUserProjectModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2869,6 +2983,7 @@
 				00818DA31BFF6ADC00AA4B28 /* addICON_grey_3x.png in Resources */,
 				00818D741BFF47F000AA4B28 /* setting@3x.png in Resources */,
 				00F98C131BC7A4D500115116 /* movieBackwardSelected@2x.png in Resources */,
+				9C72EDB31C327ECA00511A57 /* 我_私信@3x.png in Resources */,
 				008C40581C15904400672F74 /* UMSCommentInputController.xib in Resources */,
 				005C07C11BDB7CF50027D284 /* womenNO@3x.png in Resources */,
 				00B764811BF123D3001BA433 /* huoban_startup-4.png in Resources */,
@@ -2891,6 +3006,7 @@
 				00818D8D1BFF4F1D00AA4B28 /* choosefrom album@3x.png in Resources */,
 				9C9D7A631C2BEDD200E1A21D /* 可点击确认@3x.png in Resources */,
 				007D041F1C1E6E2100AA9645 /* DeleteDynamic@3x.png in Resources */,
+				9C72EDB41C327ECA00511A57 /* 系统设置.png in Resources */,
 				0042FEE31C0EA724006381FA /* payChoseButtonYES@2x.png in Resources */,
 				006F23C71BA2EBA1002CDCE1 /* MJRefresh.bundle in Resources */,
 				0042FEE41C0EA724006381FA /* payChoseButtonYES@3x.png in Resources */,
@@ -2906,6 +3022,7 @@
 				00818D841BFF4C1600AA4B28 /* women_like_grey_3x.png in Resources */,
 				0044D9F21BC578DC006DA740 /* CloseRed@2x.png in Resources */,
 				00818D591BFF3FBC00AA4B28 /* women_more_2x.png in Resources */,
+				9C72EDB21C327ECA00511A57 /* 我_私信.png in Resources */,
 				009052AD1C0DAA0D004E85D5 /* fireGreen@3x.png in Resources */,
 				00818D811BFF4C1600AA4B28 /* women_like_blue_2x.png in Resources */,
 				00B7648F1BF1DFAD001BA433 /* womenEmpty_add@3x.png in Resources */,
@@ -2915,6 +3032,7 @@
 				00322C411BC102840088B102 /* loveYES@3x.png in Resources */,
 				0098E59F1BEF42F500D29967 /* share_3x.png in Resources */,
 				00B764971BF1F626001BA433 /* women_arrow_3x.png in Resources */,
+				9C72EDAF1C327ECA00511A57 /* edit personal info@3x.png in Resources */,
 				0042FEDF1C0EA650006381FA /* payChoseButtonNone@2x.png in Resources */,
 				9C9D7A651C2BEDD200E1A21D /* 我_back@3x.png in Resources */,
 				00818D561BFF3D2100AA4B28 /* addICON_blue_3x.png in Resources */,
@@ -2923,13 +3041,16 @@
 				00F98C101BC7A4D500115116 /* movieBackward.png in Resources */,
 				00818D961BFF553C00AA4B28 /* details_UnLove@3x.png in Resources */,
 				00B764821BF123D3001BA433 /* huoban_startup-5.5HD.png in Resources */,
+				9C72EDB51C327ECA00511A57 /* 系统设置@3x.png in Resources */,
 				00818D9E1BFF60EA00AA4B28 /* ProjectJoined@2x.png in Resources */,
 				008C40571C15904400672F74 /* UMSCommentDetailController.xib in Resources */,
+				9C72EDAE1C327ECA00511A57 /* edit personal info.png in Resources */,
 				00F98C1B1BC7A4D500115116 /* movieFullscreen@2x.png in Resources */,
 				00818D9A1BFF57A400AA4B28 /* back_yellow_3x.png in Resources */,
 				006BF32F1BAD607A0094C86A /* PEPhotoCropEditor.bundle in Resources */,
 				0022153C1B9C3ADD00B39BC1 /* HomePageCell.xib in Resources */,
 				008C40591C15904400672F74 /* UMSCommentInputControlleriPad.xib in Resources */,
+				9C72EDB11C327ECA00511A57 /* 展开提醒@3x.png in Resources */,
 				0022157A1B9D265400B39BC1 /* HomeDynamicImage.xib in Resources */,
 				00818D871BFF4C6500AA4B28 /* pinglun15@2x.png in Resources */,
 				00F28E5B1BDB4659006711CF /* pount44@3x.png in Resources */,
@@ -2985,6 +3106,7 @@
 				00818D7C1BFF488000AA4B28 /* close_grey_@3x.png in Resources */,
 				00FB16281C22B3E5006DB174 /* remind@2x.png in Resources */,
 				00818D651BFF417F00AA4B28 /* add@3x.png in Resources */,
+				9C72EDB01C327ECA00511A57 /* 展开提醒.png in Resources */,
 				005C07C01BDB7CF50027D284 /* womenYES@3x.png in Resources */,
 				008C405B1C15904400672F74 /* UMShareEditViewControlleriPad.xib in Resources */,
 				00686D1A1BD769840040712C /* buttonPayUP100@3x.png in Resources */,
@@ -3014,6 +3136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				003C545D1C2119B900A11115 /* DynamicUpListTableViewController.m in Sources */,
+				9C9D7A8B1C311E7A00E1A21D /* UserNewsTableViewCell.m in Sources */,
 				0062121D1BC0F67C0041C79A /* UIImage+GIF.m in Sources */,
 				000723271BB52A1000BCF254 /* QNDes.m in Sources */,
 				007D04231C1E9F8D00AA9645 /* OneProjectDynamicTableViewController.m in Sources */,
@@ -3022,6 +3145,7 @@
 				9C9D7A511C2BEC5000E1A21D /* huobanRegisterViewController.m in Sources */,
 				006F51081BB18D8200251A62 /* CreateDynamicNavigationController.m in Sources */,
 				00CC4A2B1BB463E7007FCCAE /* JSONKit.m in Sources */,
+				9C9D7AC41C325CC600E1A21D /* HttpTool.m in Sources */,
 				006F23CA1BA2EBA1002CDCE1 /* MJRefreshFooterView.m in Sources */,
 				000722FB1BB5271500BCF254 /* QNResponseInfo.m in Sources */,
 				000722851BB4F96700BCF254 /* AFURLResponseSerialization.m in Sources */,
@@ -3042,14 +3166,17 @@
 				00C03C201BA581AD005B712D /* ProjectModel.m in Sources */,
 				00F98C0E1BC7A4D500115116 /* ALMoviePlayerController.m in Sources */,
 				000722F31BB5271500BCF254 /* QNALAssetFile.m in Sources */,
+				9C9D7A991C3142DC00E1A21D /* HuoBanUserProjectModel.m in Sources */,
 				000722831BB4F96700BCF254 /* AFURLConnectionOperation.m in Sources */,
 				000723011BB5271500BCF254 /* QNResumeUpload.m in Sources */,
 				006683CD1B882EB700D1D5B3 /* appDemo.xcdatamodeld in Sources */,
 				000723281BB52A1000BCF254 /* QNHex.m in Sources */,
 				00CC4AB81BB46A5E007FCCAE /* MKNetworkOperation.m in Sources */,
 				00E2F8E21BBA7FB500354DD2 /* OtherUserInfoViewController.m in Sources */,
+				9C72ED8F1C32791C00511A57 /* huobanUserBaseInfoPost.m in Sources */,
 				00148ED61BEAF265003CF879 /* SendProjectListTableViewController.m in Sources */,
 				9C9D7A4F1C2BEC5000E1A21D /* huobanLoginGuideViewController.m in Sources */,
+				9C72ED8E1C32791C00511A57 /* huobanUserBaseInfoModel.m in Sources */,
 				000722FF1BB5271500BCF254 /* QNConfiguration.m in Sources */,
 				00CC4AC31BB46BA6007FCCAE /* REMenuContainerView.m in Sources */,
 				0037D2FA1BEB732900A7D431 /* NewProjectViewController.m in Sources */,
@@ -3057,11 +3184,13 @@
 				006F23B51BA2DD27002CDCE1 /* UserInfomation.m in Sources */,
 				000722821BB4F96700BCF254 /* AFSecurityPolicy.m in Sources */,
 				007E03AA1BA80CF0001383C1 /* ProjectMoreStoryViewController.m in Sources */,
+				9C9D7A831C311DE500E1A21D /* UserHeaderView.m in Sources */,
 				0022153F1B9C3AFA00B39BC1 /* HomePageTableViewCell.m in Sources */,
 				006BF3321BAD607A0094C86A /* PECropViewController.m in Sources */,
 				006F23CC1BA2EBA1002CDCE1 /* UIScrollView+MJExtension.m in Sources */,
 				000722F91BB5271500BCF254 /* QNDns.m in Sources */,
 				006D8BD41BD69AC40006E990 /* MoreDynamicViewController.m in Sources */,
+				9C72ED8D1C32791C00511A57 /* huobanUserBaseInfoData.m in Sources */,
 				0041AC901B8EB71100548563 /* ToolClass.m in Sources */,
 				000722841BB4F96700BCF254 /* AFURLRequestSerialization.m in Sources */,
 				00322C4C1BC10F840088B102 /* DataModelCellProjectDetailDynamic.m in Sources */,
@@ -3070,12 +3199,12 @@
 				0007230D1BB529F300BCF254 /* QNHijackingDetectWrapper.m in Sources */,
 				000722881BB4F96700BCF254 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				00687AF41BB2F4F5008EF3F4 /* CommentSubmitBar.m in Sources */,
+				9C72ED901C32791C00511A57 /* huobanUserBaseInfoProject.m in Sources */,
 				006212181BC0F67C0041C79A /* SDWebImageDownloader.m in Sources */,
 				000723021BB5271500BCF254 /* QNUploadManager.m in Sources */,
 				000723041BB5271500BCF254 /* QNUpToken.m in Sources */,
 				00CC4A371BB465F6007FCCAE /* TalkViewController.m in Sources */,
 				0007228A1BB4F96700BCF254 /* UIButton+AFNetworking.m in Sources */,
-				007D04191C1E5E8100AA9645 /* UserSelfMessageViewController.m in Sources */,
 				00F98C0C1BC7A4D500115116 /* ALAirplayView.m in Sources */,
 				0007227F1BB4F96700BCF254 /* AFHTTPRequestOperationManager.m in Sources */,
 				9C9D7A501C2BEC5000E1A21D /* huobanLoginViewController.m in Sources */,
@@ -3089,8 +3218,10 @@
 				0007231C1BB529FF00BCF254 /* QNRecord.m in Sources */,
 				00C155C41C246656008F8B15 /* AryRemindMessage.m in Sources */,
 				00CC4A3B1BB466EB007FCCAE /* ProjectDetailsViewController.m in Sources */,
+				9C72ED8C1C32791C00511A57 /* huobanUserBaseInfoCreator.m in Sources */,
 				002215D11B9D71C900B39BC1 /* UIView+SDExtension.m in Sources */,
 				00CC4A2F1BB46568007FCCAE /* SDCycleScrollView.m in Sources */,
+				9C9D7A8C1C311E7A00E1A21D /* UserObjectTableViewCell.m in Sources */,
 				00CC4A311BB46583007FCCAE /* TAAnimatedDotView.m in Sources */,
 				006212191BC0F67C0041C79A /* SDWebImageDownloaderOperation.m in Sources */,
 				00CC4AC41BB46BA6007FCCAE /* REMenuItem.m in Sources */,
@@ -3114,8 +3245,10 @@
 				0031B5611BAC19E3003484EF /* YcKeyBoardView.m in Sources */,
 				006A14421BD8018C0072D13F /* TYMProgressBarView.m in Sources */,
 				0007227E1BB4F96700BCF254 /* AFHTTPRequestOperation.m in Sources */,
+				9C9D7A981C3142DC00E1A21D /* HuoBanUserProjectData.m in Sources */,
 				000723031BB5271500BCF254 /* QNUploadOption.m in Sources */,
 				0012A1EB1B8C942700672553 /* UIProgressBar.m in Sources */,
+				9C72ED8B1C32791C00511A57 /* huobanUserBaseInfoAllProject.m in Sources */,
 				00CC4AC21BB46BA6007FCCAE /* REMenu.m in Sources */,
 				006F23CE1BA2EBA1002CDCE1 /* UIView+MJExtension.m in Sources */,
 				003C54541C21129100A11115 /* OneProjectTableViewCell.m in Sources */,
@@ -3149,6 +3282,7 @@
 				006683C71B882EB700D1D5B3 /* main.m in Sources */,
 				0031B5641BAC1A73003484EF /* WHPlaceholderTextView.m in Sources */,
 				006F23CB1BA2EBA1002CDCE1 /* MJRefreshHeaderView.m in Sources */,
+				9C9D7A921C31205200E1A21D /* UserSelfMessageViewController.m in Sources */,
 				00CC4AB31BB46A5E007FCCAE /* NSDictionary+RequestEncoding.m in Sources */,
 				000722891BB4F96700BCF254 /* UIAlertView+AFNetworking.m in Sources */,
 				0096A37B1BE356BA00AE231E /* EditPayForAddAndNameViewController.m in Sources */,
@@ -3169,6 +3303,7 @@
 				003C54591C21199C00A11115 /* DynamicUpListTableViewCell.m in Sources */,
 				000722F61BB5271500BCF254 /* QNEtag.m in Sources */,
 				000722811BB4F96700BCF254 /* AFNetworkReachabilityManager.m in Sources */,
+				9C9D7A861C311E2D00E1A21D /* UserOption.m in Sources */,
 				0096A38B1BE4B22E00AE231E /* AppSettingViewController.m in Sources */,
 				00CC4A2D1BB4653F007FCCAE /* PECropView.m in Sources */,
 				00CC4AB01BB46A5E007FCCAE /* NSAlert+MKNetworkKitAdditions.m in Sources */,

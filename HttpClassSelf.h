@@ -15,6 +15,10 @@ typedef void (^CallBackNO)(MKNetworkOperation *errorOp,NSError *err);
 @interface HttpClassSelf : NSObject
 
 
+
++ (void) httpGetRequestWithPath:(NSString *) path params:(NSDictionary *)params CallBackYES:(CallBackYES)BlockYES CallBackNO:(CallBackNO)BlockNO;
++ (void) httpPostRequestWithPath:(NSString *) path params:(NSDictionary *)params CallBackYES:(CallBackYES)BlockYES CallBackNO:(CallBackNO)BlockNO;
+
 #pragma mark POST
 //登陆
 -(void)loginSetMobile:(NSString *)mobile pwd:(NSString *)pwd umengid:(NSString *)umengid mobibuild:(NSString *)mobibuild mobitype:(NSString *)mobitype CallBackYES:(CallBackYES)BlockYES CallBackNO:(CallBackNO)BlockNO;
@@ -129,6 +133,9 @@ typedef void (^CallBackNO)(MKNetworkOperation *errorOp,NSError *err);
 //Umeng发推送
 //-(void)uMengGetMessage:(NSString*)str CallBackYES:(CallBackYES)BlockYES CallBackNO:(CallBackNO)BlockNO;
 
+
+//我V@
+-(void)getUserSelfInfoByUserID:(NSString *)strUserID page:(int)pageInt num:(int)numInt token:(NSString *)strToken CallBackYES:(CallBackYES)BlockYES CallBackNO:(CallBackNO)BlockNO;
 
 
 @end

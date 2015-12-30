@@ -185,10 +185,10 @@ NSString *_iOSSizeLogin;
     
         DataModel *dataModelLoginSuccess = [[DataModel alloc] init];
     
-        [_httpClassLogin loginSetMobile:self.textFieldUN.text pwd:self.textFieldPWD.text umengid:@""mobibuild:[UIDevice currentDevice].model mobitype:@"iOS" CallBackYES:^(MKNetworkOperation *operatioin){
+        [_httpClassLogin loginSetMobile:self.textFieldUN.text pwd:self.textFieldPWD.text umengid:@"test"mobibuild:[UIDevice currentDevice].model mobitype:@"iOS" CallBackYES:^(MKNetworkOperation *operatioin){
         
         NSData *data = [operatioin responseData];
-        
+    
         _resLoginDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         
         NSLog(@"%@",_resLoginDic);

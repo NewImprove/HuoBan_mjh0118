@@ -16,6 +16,7 @@
 #import "UMSocialWechatHandler.h"
 #import "huobanAuthViewController.h"
 #import "huobanLoginGuideViewController.h"
+#import "UserSelfMessageViewController.h"
 
 
 @interface AppDelegate ()
@@ -108,6 +109,7 @@
     
     NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@"<>"]];
     token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
     NSLog(@"获取TOKENTOEKN : %@", token);
     
     DataModel *dataUMessage = [[DataModel alloc] init];
@@ -284,17 +286,23 @@
     
     NSMutableArray * tabBarViewControllers = [NSMutableArray arrayWithArray:loginTabBarvc.viewControllers];
     //    huobanAuthViewController * authNavigationController = [[huobanAuthViewController alloc]init];
-    huobanAuthViewController * authNavigationController = [[huobanAuthViewController alloc]initWithRootViewController:[[huobanLoginGuideViewController alloc] init]];
     
+NSLog(@"%ld",(long)[[NSUserDefaults standardUserDefaults]integerForKey:@"runtimes"]);
     if([[NSUserDefaults standardUserDefaults]integerForKey:@"runtimes"]){
         NSLog(@"当前用户已经登录");
-                huobanAuthViewController * authNavigationController = [[huobanAuthViewController alloc]initWithRootViewController:[[UserSelfViewController alloc] init]];
+    huobanAuthViewController * authNavigationController = [[huobanAuthViewController alloc]initWithRootViewController:[[UserSelfMessageViewController alloc] init]];
+        
+        [tabBarViewControllers replaceObjectAtIndex:tabBarViewControllers.count-1 withObject:authNavigationController];
+        
+        loginTabBarvc.viewControllers = tabBarViewControllers;
+
     } else {
         NSLog(@"当前用户未登录");
+        huobanAuthViewController * authNavigationController = [[huobanAuthViewController alloc]initWithRootViewController:[[huobanLoginGuideViewController alloc] init]];
+        [tabBarViewControllers replaceObjectAtIndex:tabBarViewControllers.count-1 withObject:authNavigationController];
+        loginTabBarvc.viewControllers = tabBarViewControllers;
         
     }
-    [tabBarViewControllers replaceObjectAtIndex:tabBarViewControllers.count-1 withObject:authNavigationController];
-    loginTabBarvc.viewControllers = tabBarViewControllers;
     
 }
 

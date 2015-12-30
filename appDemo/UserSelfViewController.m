@@ -146,6 +146,8 @@ bool isReturnTM;
     
     [super viewWillAppear:animated];
 
+        
+        //获取用户个人信息的数据
     [_httpClassUser CheckUserSelfSetUser:_userid token:_tokenid CallBackYES:^(MKNetworkOperation *operatioin){
         
         _countMidAImage = 0;

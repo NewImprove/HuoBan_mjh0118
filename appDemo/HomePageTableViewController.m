@@ -118,6 +118,7 @@ UIView *_viewTop;
 
     _dataModelHomePage = [[DataModel alloc] init];
     
+    
     _iOSDeviceSize =  _dataModelHomePage.userInfomation.iOSDeviceSize;
 
     //选择视图

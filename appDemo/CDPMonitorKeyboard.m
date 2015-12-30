@@ -13,17 +13,36 @@
     CGRect _superViewOldFrame;
 }
 
+////单例化
+//+(CDPMonitorKeyboard *)defaultMonitorKeyboard{
+//    static CDPMonitorKeyboard *monitorKeyboard= nil;
+//    
+//    @synchronized(self){
+//        if (!monitorKeyboard) {
+//            monitorKeyboard=[[self alloc] init];
+//        }
+//    }
+//    return monitorKeyboard;
+//}
+//
+
 //单例化
 +(CDPMonitorKeyboard *)defaultMonitorKeyboard{
     static CDPMonitorKeyboard *monitorKeyboard= nil;
     
-    @synchronized(self){
-        if (!monitorKeyboard) {
-            monitorKeyboard=[[self alloc] init];
-        }
-    }
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        monitorKeyboard = [self new];
+    });
+    
+//    @synchronized(self){
+//        if (!monitorKeyboard) {
+//            monitorKeyboard=[[self alloc] init];
+//        }
+//    }
     return monitorKeyboard;
 }
+
 
 
 //当键盘出现时调用方法
