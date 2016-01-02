@@ -34,6 +34,7 @@ static NSInteger optionItemLineHeight = 2;
 //选项按钮的高度
 static NSInteger optionItemHeight = 55;
 
+typedef void(^changeOptionSelectedBlock)(NSInteger optionIndex);
 
 //下划线的颜色 
 // #F9ED31   RGB:249,237,49
@@ -45,11 +46,37 @@ static NSInteger optionItemHeight = 55;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self userOptionsWithAmount:0];
+        [self userOptionsWithAmount:4];
+        
     }
     return self;
 }
 
+- (NSMutableArray *)userOptionViewItems {
+    if (!_userOptionViewItems) {
+        _userOptionViewItems = [NSMutableArray new];
+    }
+    return _userOptionViewItems;
+}
+//option  显示文字
+
+
+- (void)setUserOptionsArray:(NSArray *)userOptionsArray {
+    _userOptionsArray = userOptionsArray;
+    for (NSString * str in userOptionsArray) {
+        NSLog(@"%@",str);
+    }
+}
+
+- (void)setDataModel:(huobanUserBaseInfoData *)dataModel {
+    _dataModel = dataModel;
+    [((UIButton *)self.userOptionViewItems[0]) setTitle:[NSString stringWithFormat:@"%zi项目",dataModel.allprojects.count] forState:UIControlStateNormal];
+    [((UIButton *)self.userOptionViewItems[1]) setTitle:[NSString stringWithFormat:@"%zi动态",dataModel.feed.count] forState:UIControlStateNormal];
+    [((UIButton *)self.userOptionViewItems[2]) setTitle:[NSString stringWithFormat:@"%zi关注",dataModel.followers] forState:UIControlStateNormal];
+    [((UIButton *)self.userOptionViewItems[3]) setTitle:[NSString stringWithFormat:@"%zi被关注",dataModel.following] forState:UIControlStateNormal];
+
+    
+}
 
 /**
   用户选项视图的View
@@ -70,14 +97,18 @@ static NSInteger optionItemHeight = 55;
         [optionView setBackgroundColor:OptionItemColor];
         if (i == 0) {
             [optionView setBackgroundColor:OptionLineColor];
+            self.selectedIndex = 0;
         }
         //设置button
         UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, Main_Screen_Width/_amount, optionItemHeight)];
         button.tag = i;
         [button setBackgroundColor:RGBCOLOR(38, 56, 70)];
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(buttonAction2:) forControlEvents:UIControlEventTouchUpInside];
         [optionView addSubview:button];
         [self addSubview:optionView];
+        //将button依次添加到属性userOptionViewItmes中
+        [self.userOptionViewItems addObject:button];
     }
 }
 
@@ -89,11 +120,17 @@ static NSInteger optionItemHeight = 55;
         
         if (view.tag == sender.tag) {
             view.backgroundColor = OptionLineColor;
+            self.selectedIndex = sender.tag;
         }
         else{
             view.backgroundColor = OptionItemColor;
         }
     }
+    [self.delegate segmentedControlSelectAtIndex:self.selectedIndex];
+}
+
+- (void) buttonAction2:(UIButton *)sender {
+    NSLog(@"buttonAction2");
 }
 
 /*

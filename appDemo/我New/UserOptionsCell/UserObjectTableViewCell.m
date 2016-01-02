@@ -35,7 +35,7 @@
     _model = model;
     
     NSLog(@"%@",model.title);
-    [self.objectStateDiscribe setText:[NSString stringWithFormat:@"%@",model.title]];
+//    [self.objectStateDiscribe setText:[NSString stringWithFormat:@"%@项目",model.title]];
     
 
     

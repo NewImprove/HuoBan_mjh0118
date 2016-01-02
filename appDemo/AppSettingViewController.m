@@ -104,6 +104,7 @@ DataModel *_dataModelAppSetting;
     
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     
+    
     [ud setInteger:0 forKey:@"runtimes"];
     
     [self performSegueWithIdentifier:@"CancelLoginInSegue" sender:nil];

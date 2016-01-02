@@ -1,14 +1,14 @@
 //
-//  UserNewsTableViewCell.m
+//  userFollowingTableViewCell.m
 //  huoban
 //
-//  Created by 马锦航 on 15/12/16.
+//  Created by 马锦航 on 15/12/31.
 //  Copyright © 2015年 lyc. All rights reserved.
 //
 
-#import "UserNewsTableViewCell.h"
+#import "userFollowingTableViewCell.h"
 
-@implementation UserNewsTableViewCell
+@implementation userFollowingTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
