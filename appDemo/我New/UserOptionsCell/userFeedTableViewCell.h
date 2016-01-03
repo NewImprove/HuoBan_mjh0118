@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "huobanUserFeedData.h"
 
 @interface userFeedTableViewCell : UITableViewCell
+
+@property (nonatomic,strong) huobanUserFeedData * model;
 
 @end

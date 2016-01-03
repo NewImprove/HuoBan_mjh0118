@@ -19,17 +19,20 @@
 #import "HttpTool.h"
 #import "huobanUserBaseInfoModel.h"
 #import "UserMessageViewController.h"
+
 #import "AppSettingViewController.h"
 #import "userFeedTableViewCell.h"
 #import "huobanUserFeedModel.h"
-
+#import "userFollowerTableViewCell.h"
+#import "HuoBanUserFollowModel.h"
 
 static NSInteger userHeaderViewHeight = 108;
-static NSInteger userOptionViewHeight = 57;
+static NSInteger userOptionViewHeight = 72;
 
 @interface UserSelfMessageViewController ()<UITableViewDelegate,UITableViewDataSource,optionSegmentedControlDelegate>
 
-#pragma mark 全局参数
+#pragma mark 全局参数tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
 //segment选项的index
 @property (nonatomic,assign) NSInteger segmentIndex;
 
@@ -61,6 +64,12 @@ static NSInteger userOptionViewHeight = 57;
 //用户动态信息model
 @property (nonatomic,strong) huobanUserFeedModel * huobanUserFeedModel;
 
+//用户关注信息model
+@property (nonatomic,strong) HuoBanUserFollowModel * huobanUserFollower;
+
+//用户被关注信息model
+@property (nonatomic,strong) HuoBanUserFollowModel * huobanUserFollowing;
+
 @property (nonatomic,strong) NSString * userTokenID;
 
 @property (nonatomic,strong) NSString * userID;
@@ -80,6 +89,7 @@ HttpClassSelf *httpClassUserMessage;
 - (void)setHuobanUserBaseInfoModel:(huobanUserBaseInfoModel *)huobanUserBaseInfoModel {
     _huobanUserBaseInfoModel = huobanUserBaseInfoModel;
     
+    
     //show UserOption
     [self.view addSubview:self.userOptionView];
 
@@ -98,6 +108,7 @@ HttpClassSelf *httpClassUserMessage;
 }
 
 
+#pragma  mark model Setter/Getter方法
 - (void)setHuobanUserFeedModel:(huobanUserFeedModel *)huobanUserFeedModel {
     _huobanUserFeedModel = huobanUserFeedModel;
     [self.userTableView reloadData];
@@ -109,6 +120,15 @@ HttpClassSelf *httpClassUserMessage;
     [self.userTableView reloadData];
 }
 
+- (void)setHuobanUserFollower:(HuoBanUserFollowModel *)huobanUserFollower {
+    _huobanUserFollower = huobanUserFollower;
+    [self.userTableView reloadData];
+}
+
+- (void)setHuobanUserFollowing:(HuoBanUserFollowModel *)huobanUserFollowing {
+    _huobanUserFollowing = huobanUserFollowing;
+    [self.userTableView reloadData];
+}
 
 
 #pragma mark - 懒加载
@@ -140,8 +160,10 @@ HttpClassSelf *httpClassUserMessage;
         _userTableView.dataSource = self;
 //        _userTableView.bounces = NO;
         _userTableView.contentInset = UIEdgeInsetsMake(userOptionViewHeight+userHeaderViewHeight, 0, 0, 0);
-        _userTableView.backgroundColor = [UIColor blackColor];
+//        _userTableView.backgroundColor = [UIColor blackColor];
         [_userTableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
+        _userTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
 //        [_userTableView dequeueReusableCellWithIdentifier:@""];
         [_userTableView addHeaderWithTarget:self action:@selector(tableViewReload)];
     }
@@ -224,9 +246,11 @@ HttpClassSelf *httpClassUserMessage;
         case 1:
             return [self.segmentItemCount[1] integerValue];
         case 2:
-            return [self.segmentItemCount[2] integerValue];
+//            return [self.segmentItemCount[2] integerValue];
+            return 1;
         case 3:
-            return [self.segmentItemCount[3] integerValue];
+//            return [self.segmentItemCount[3] integerValue];
+            return 0;
         default:
             break;
     }
@@ -240,6 +264,8 @@ HttpClassSelf *httpClassUserMessage;
         {
             static NSString * UserObjectTableViewCellDequeueIdentifier = @"UserObjectTableViewCellcellID";
             UserObjectTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:UserObjectTableViewCellDequeueIdentifier];
+            //取消cell的选中效果
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             if (!cell) {
                 cell = [[UserObjectTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:UserObjectTableViewCellDequeueIdentifier];
             }
@@ -249,39 +275,68 @@ HttpClassSelf *httpClassUserMessage;
             break;
         case 1:
         {
+            NSLog(@"%zi",indexPath.row);
             static NSString * UserFeedTableViewCellDequeueIdentifier = @"UserFeedTableViewCellcellID";
-            UserFeedTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:UserFeedTableViewCellDequeueIdentifier];
+            userFeedTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:UserFeedTableViewCellDequeueIdentifier];
+            //取消cell的选中效果
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             if (!cell) {
-                cell = [[UserFeedTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:UserFeedTableViewCellDequeueIdentifier];
+                cell = [[userFeedTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:UserFeedTableViewCellDequeueIdentifier];
             }
+            cell.model = self.huobanUserFeedModel.data[indexPath.row];
             return cell;
-//            cell.model = self.userProjectModel.data[indexPath.row];
         }
             break;
         case 2:
         {
-            return nil;
+            static NSString * UserFollowerTableViewCellDequeueIdentifier = @"UserFollowerTableViewCell";
+            userFollowerTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:UserFollowerTableViewCellDequeueIdentifier];
+            //取消cell的选中效果
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            if (!cell) {
+                cell = [[userFollowerTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:UserFollowerTableViewCellDequeueIdentifier];
+            }
+            cell.model = self.huobanUserFollower.data[indexPath.row];
+            return cell;
         }
             break;
         case 3:
         {
-            return nil;
+            static NSString * UserFollowingTableViewCellDequeueIdentifier = @"UserFollowingTableViewCellDequeueIdentifier";
+            userFollowerTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:UserFollowingTableViewCellDequeueIdentifier];
+            //取消cell的选中效果
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            if (!cell) {
+                cell = [[userFollowerTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:UserFollowingTableViewCellDequeueIdentifier];
+            }
+            cell.model = self.huobanUserFollowing.data[indexPath.row];
+            return cell;
         }
             break;
         default:
             break;
     }
-
-    
-    
-    
-    
-    
-    
     return nil;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (self.segmentIndex) {
+        case 0:
+            return 132;
+            break;
+        case 1:
+            //需要自适应高度
+            return 232;
+            break;
+        case 2:
+            return 56;
+            break;
+        case 3:
+            return 56;
+            break;
+        default:
+            break;
+    }
     return 420;
 }
 
@@ -336,8 +391,8 @@ HttpClassSelf *httpClassUserMessage;
 
     [HttpTool getWithPath:path params:nil success:^(id JSON) {
         
-        NSLog(@"\n%@",JSON);
-        NSLog(@"以上是用户基本信息");
+//        NSLog(@"\n%@",JSON);
+//        NSLog(@"以上是用户基本信息");
         self.huobanUserBaseInfoModel = [[huobanUserBaseInfoModel alloc]initWithDictionary:JSON];
         
     } failure:^(NSError *error) {
@@ -361,7 +416,7 @@ HttpClassSelf *httpClassUserMessage;
         
         NSMutableDictionary *resdic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         self.userProjectModel = [[HuoBanUserProjectModel alloc]initWithDictionary:resdic];
-        NSLog(@"用户项目信息%@",resdic);
+//        NSLog(@"用户项目信息%@",resdic);
     } CallBackNO:^(MKNetworkOperation *errorOp, NSError *err) {
         ;
     }];
@@ -371,31 +426,38 @@ HttpClassSelf *httpClassUserMessage;
 #pragma mark 用户动态网络请求
 - (void) userFeedListRequest {
     NSString * userFeedListPath =[NSString stringWithFormat:@"/feed/u-%@/page-0/num-5/%@",self.userID,self.userTokenID];
-    NSLog(@"path%@",userFeedListPath);
+    NSLog(@"path:\napi.huoban.io:8877/%@",userFeedListPath);
     [HttpTool getWithPath:userFeedListPath params:nil success:^(id JSON) {
-        NSLog(@"用户动态%@",JSON);
+//        NSLog(@"用户动态%@",JSON);
         
-//        self.huobanUserFeedModel = [[huobanUserFeedModel alloc]initWithDictionary:JSON];
+        self.huobanUserFeedModel = [[huobanUserFeedModel alloc]initWithDictionary:JSON];
+        
+        NSLog(@"用户动态%@",self.huobanUserFeedModel.data);
         
     } failure:^(NSError *error) {
         ;
     }];
 }
 #pragma mark 关注网络请求
-- (void) userFollowInfoRequest {
+- (void) userFollowerInfoRequest {
+    
+    
     [HttpTool getWithPath:[NSString stringWithFormat:@"/user/%@/follower/page-0/num-0/%@",self.userID,self.userTokenID] params:nil success:^(id JSON) {
         
-        NSLog(@"关注网络请求%@",JSON);
+        self.huobanUserFollower = [[HuoBanUserFollowModel alloc]initWithDictionary:JSON];
+        
+//        NSLog(@"关注网络请求%@",JSON);
     } failure:^(NSError *error) {
         NSLog(@"%@",error.localizedDescription);
     }];
 }
 
 #pragma mark 被关注网络请求
-- (void) userFollowersInfoRequest {
+- (void) userFollowingInfoRequest {
+    
     [HttpTool getWithPath:[NSString stringWithFormat:@"/user/%@/following/page-0/num-0/%@",self.userID,self.userTokenID] params:nil success:^(id JSON) {
-        
-        NSLog(@"被关注网络请求%@",JSON);
+        self.huobanUserFollowing = [[HuoBanUserFollowModel alloc]initWithDictionary:JSON];
+//        NSLog(@"被关注网络请求%@",JSON);
     } failure:^(NSError *error) {
         NSLog(@"%@",error.localizedDescription);
     }];
@@ -412,10 +474,11 @@ HttpClassSelf *httpClassUserMessage;
     
     //项目信息网络请求
     [self userProjectInfoRequest];
+    
     //关注信息网络请求
-    [self userFollowInfoRequest];
+//    [self userFollowerInfoRequest];
     //被关注信息网络请求
-    [self userFollowersInfoRequest];
+//    [self userFollowingInfoRequest];
     
     
     NSLog(@"%@",self.userBaseInfoModel.userInfomation.Name);
@@ -444,23 +507,37 @@ HttpClassSelf *httpClassUserMessage;
     switch (index) {
         case 0:
         {
-            
+            if (!self.userProjectModel) {
+                [self userProjectInfoRequest];
+            }
+            [self.userTableView reloadData];
         }
             break;
         case 1:
         {
-            //动态信息网络请求
-            [self userFeedListRequest];
+            if (!self.huobanUserFeedModel) {
+                //动态信息网络请求
+                [self userFeedListRequest];
+                break;
+            }
+            [self.userTableView reloadData];
         }
             break;
         case 2:
         {
-            
+            if (!self.huobanUserFollower) {
+                //
+                [self userFollowerInfoRequest];
+            }
+            [self.userTableView reloadData];
         }
             break;
         case 3:
         {
-            
+            if (!self.huobanUserFollowing) {
+                [self userFollowerInfoRequest];
+            }
+            [self.userTableView reloadData];
         }
             break;
         default:

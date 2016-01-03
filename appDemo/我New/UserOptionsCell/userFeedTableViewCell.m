@@ -7,6 +7,7 @@
 //
 
 #import "userFeedTableViewCell.h"
+#import "HttpTool.h"
 
 // Screen Scale
 #define MainScreenScale         [[UIScreen mainScreen] scale]
@@ -37,7 +38,7 @@
 //已经过了的时间
 @property (nonatomic,strong) UILabel * timeAlredy;
 //文字内容
-@property (nonatomic,strong) UITextField * article;
+@property (nonatomic,strong) UILabel * article;
 //图片
 @property (nonatomic,strong) UIButton * feedImage;
 //删除按钮
@@ -46,13 +47,31 @@
 @property (nonatomic,strong) UIButton * favorite;
 
 
+
 @end
+
 
 
 
 @implementation userFeedTableViewCell
 
 #pragma mark settergetter
+
+
+- (void)setModel:(huobanUserFeedData *)model {
+    _model = model;
+    
+    self.article.text = model.message;
+    self.timeAlredy.text = model.time;
+    [self.favorite setTitle:[NSString stringWithFormat:@"%@喜欢,%@评论",[model.up valueForKey:@"count"],[model.comment valueForKey:@"count"] ] forState:UIControlStateNormal];
+    [self.userHeader setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[model.user valueForKey:@"image"]]]] forState:UIControlStateNormal];
+    self.userName.text = [model.user valueForKey:@"name"];
+
+
+//    [self userBaseInfoRequestWithUserID:[model.user valueForKey:@"ObjectID"]];
+}
+
+
 
 #pragma mark 懒加载
 
@@ -63,7 +82,8 @@
         _userHeader = [[UIButton alloc]init];
         _userHeader.frame = CGRectMake(12, 12, _userHeaderSideLong, _userHeaderSideLong);
         [_userHeader setBackgroundColor:[UIColor grayColor]];
-
+        _userHeader.layer.borderColor = [UIColor blackColor].CGColor;
+//        _userHeader.layer.borderWidth = 0.1;
         _userHeader.layer.cornerRadius = _userHeaderSideLong/2;
     }
     return _userHeader;
@@ -111,13 +131,13 @@
     return _timeAlredy;
 }
 
-- (UITextField *)article {
+- (UILabel *)article {
     if (!_article) {
         CGFloat _topToCell = 100;
         CGFloat _leftToScreenLeft = 74;
         CGFloat _width = Main_Screen_Width - _leftToScreenLeft;
         CGFloat _height = 80;
-        _article = [[UITextField alloc]init];
+        _article = [[UILabel alloc]init];
         _article.frame = CGRectMake(_topToCell, _leftToScreenLeft, _width, _height);
         _article.text = @"测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容";
     }
@@ -152,12 +172,14 @@
 
 - (UIButton *)favorite {
     if (!_favorite) {
-        CGFloat _leftToScreen = 260;
-        CGFloat _topToCellTop = 360;
+        CGFloat _leftToScreen = 160;
+        CGFloat _topToCellTop = 160;
         CGFloat _width = 100;
         CGFloat _height = 44;
         _favorite = [[UIButton alloc]init];
         _favorite.frame = CGRectMake(_leftToScreen, _topToCellTop, _width, _height);
+        [_favorite setBackgroundColor:[UIColor redColor]];
+        [_favorite setFont:[UIFont systemFontOfSize:10]];
     }
     return _favorite;
 }
@@ -187,5 +209,7 @@
     }
     return self;
 }
+
+
 
 @end

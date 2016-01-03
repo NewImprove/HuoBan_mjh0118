@@ -17,7 +17,7 @@
 
 @interface UserObjectTableViewCell ()
 
-@property (nonatomic,strong) UIButton * objectImage;
+@property (nonatomic,strong) UIView * objectImage;
 
 @property (nonatomic,strong) UILabel * objectStateDiscribe;
 
@@ -35,17 +35,26 @@
     _model = model;
     
     NSLog(@"%@",model.title);
-//    [self.objectStateDiscribe setText:[NSString stringWithFormat:@"%@项目",model.title]];
+//    self.objectImage setBackgroundImage:<#(nullable UIImage *)#> forState:<#(UIControlState)#>
+    //    self.customView.layer.contents = (id)[UIImage imageNamed:@"header_001"].CGImage;
     
+    self.objectImage.layer.contents = (id)[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.images[0]]]].CGImage ;
+    
+    [self.objectStateDiscribe setText:[NSString stringWithFormat:@"%@项目",model.title]];
+    self.objectState.text = model.type;
 
     
 }
 
-- (UIButton *)objectImage {
+- (UIView *)objectImage {
     if (!_objectImage) {
         _objectImage = [[UIButton alloc]initWithFrame:CGRectMake(12, 12, 120, 120)];
+//setCornerRadius:YES
+//        _objectImage.layer setcor
+        [_objectImage.layer setMasksToBounds:YES];
         _objectImage.layer.cornerRadius = 6;
-        [_objectImage setBackgroundColor:[UIColor grayColor]];
+
+//        [_objectImage setBackgroundColor:[UIColor grayColor]];
     }
     return _objectImage;
 }

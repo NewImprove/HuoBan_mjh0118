@@ -3,7 +3,7 @@
 //  LoveLimitFree
 //
 //  Created by andezhou on 15/9/8.
-//  Copyright (c) 2015年 周安德. All rights reserved.
+//  Copyright (c) 2015年 马锦航. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

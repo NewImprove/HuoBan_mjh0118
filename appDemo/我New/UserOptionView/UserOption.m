@@ -32,7 +32,7 @@
 static NSInteger optionItemLineHeight = 2;
 
 //选项按钮的高度
-static NSInteger optionItemHeight = 55;
+static NSInteger optionItemHeight = 70;
 
 typedef void(^changeOptionSelectedBlock)(NSInteger optionIndex);
 
@@ -70,10 +70,10 @@ typedef void(^changeOptionSelectedBlock)(NSInteger optionIndex);
 
 - (void)setDataModel:(huobanUserBaseInfoData *)dataModel {
     _dataModel = dataModel;
-    [((UIButton *)self.userOptionViewItems[0]) setTitle:[NSString stringWithFormat:@"%zi项目",dataModel.allprojects.count] forState:UIControlStateNormal];
-    [((UIButton *)self.userOptionViewItems[1]) setTitle:[NSString stringWithFormat:@"%zi动态",dataModel.feed.count] forState:UIControlStateNormal];
-    [((UIButton *)self.userOptionViewItems[2]) setTitle:[NSString stringWithFormat:@"%zi关注",dataModel.followers] forState:UIControlStateNormal];
-    [((UIButton *)self.userOptionViewItems[3]) setTitle:[NSString stringWithFormat:@"%zi被关注",dataModel.following] forState:UIControlStateNormal];
+    [((UIButton *)self.userOptionViewItems[0]) setTitle:[NSString stringWithFormat:@"%zi",dataModel.allprojects.count] forState:UIControlStateNormal];
+    [((UIButton *)self.userOptionViewItems[1]) setTitle:[NSString stringWithFormat:@"%zi",dataModel.feed.count] forState:UIControlStateNormal];
+    [((UIButton *)self.userOptionViewItems[2]) setTitle:[NSString stringWithFormat:@"%zi",dataModel.followers] forState:UIControlStateNormal];
+    [((UIButton *)self.userOptionViewItems[3]) setTitle:[NSString stringWithFormat:@"%zi",dataModel.following] forState:UIControlStateNormal];
 
     
 }

@@ -16,6 +16,7 @@
 - (UIButton *)userHeaderButton {
     if (!_userHeaderButton) {
         _userHeaderButton = [[UIButton alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2-36, 12, 72, 72)];
+        _userHeaderButton.layer.masksToBounds = YES;
         _userHeaderButton.layer.cornerRadius = 36;
         [_userHeaderButton setBackgroundColor:[UIColor whiteColor]];
     }

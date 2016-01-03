@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HuoBanUserFollowModel.h"
 
 @interface userFollowerTableViewCell : UITableViewCell
+
+@property (nonatomic,strong) HuoBanUserFollowData * model;
+
+
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 
 @end

@@ -360,13 +360,14 @@
 		9C1843491C34CA450064BEFA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C1843481C34CA450064BEFA /* Info.plist */; };
 		9C18434C1C35090F0064BEFA /* userFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C18434B1C35090F0064BEFA /* userFeedTableViewCell.m */; };
 		9C18434F1C3509260064BEFA /* userFollowerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C18434E1C3509260064BEFA /* userFollowerTableViewCell.m */; };
-		9C1843521C35093E0064BEFA /* userFollowingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1843511C35093E0064BEFA /* userFollowingTableViewCell.m */; };
 		9C1843621C3532180064BEFA /* huobanUserFeedComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1843571C3532180064BEFA /* huobanUserFeedComment.m */; };
 		9C1843631C3532180064BEFA /* huobanUserFeedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1843591C3532180064BEFA /* huobanUserFeedData.m */; };
 		9C1843641C3532180064BEFA /* huobanUserFeedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C18435B1C3532180064BEFA /* huobanUserFeedModel.m */; };
 		9C1843651C3532180064BEFA /* huobanUserFeedProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C18435D1C3532180064BEFA /* huobanUserFeedProject.m */; };
 		9C1843661C3532180064BEFA /* huobanUserFeedUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C18435F1C3532180064BEFA /* huobanUserFeedUp.m */; };
 		9C1843671C3532180064BEFA /* huobanUserFeedUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1843611C3532180064BEFA /* huobanUserFeedUser.m */; };
+		9C3AB4CC1C37CE36004977D4 /* HuoBanUserFollowData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AB4C91C37CE36004977D4 /* HuoBanUserFollowData.m */; };
+		9C3AB4CD1C37CE36004977D4 /* HuoBanUserFollowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AB4CB1C37CE36004977D4 /* HuoBanUserFollowModel.m */; };
 		9C72EDAE1C327ECA00511A57 /* edit personal info.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDA61C327ECA00511A57 /* edit personal info.png */; };
 		9C72EDAF1C327ECA00511A57 /* edit personal info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDA71C327ECA00511A57 /* edit personal info@3x.png */; };
 		9C72EDB01C327ECA00511A57 /* 展开提醒.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDA81C327ECA00511A57 /* 展开提醒.png */; };
@@ -381,7 +382,6 @@
 		9C768E9F1C33B42A005F8D53 /* huobanUserBaseInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C768E961C33B42A005F8D53 /* huobanUserBaseInfoData.m */; };
 		9C768EA01C33B42A005F8D53 /* huobanUserBaseInfoCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C768E981C33B42A005F8D53 /* huobanUserBaseInfoCreator.m */; };
 		9C768EA11C33B42A005F8D53 /* huobanUserBaseInfoAllproject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C768E9A1C33B42A005F8D53 /* huobanUserBaseInfoAllproject.m */; };
-		9C768EA51C33C799005F8D53 /* UserFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C768EA41C33C799005F8D53 /* UserFeedTableViewCell.m */; };
 		9C9D7A4F1C2BEC5000E1A21D /* huobanLoginGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7A4A1C2BEC5000E1A21D /* huobanLoginGuideViewController.m */; };
 		9C9D7A501C2BEC5000E1A21D /* huobanLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7A4C1C2BEC5000E1A21D /* huobanLoginViewController.m */; };
 		9C9D7A511C2BEC5000E1A21D /* huobanRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7A4E1C2BEC5000E1A21D /* huobanRegisterViewController.m */; };
@@ -976,8 +976,6 @@
 		9C18434B1C35090F0064BEFA /* userFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userFeedTableViewCell.m; sourceTree = "<group>"; };
 		9C18434D1C3509260064BEFA /* userFollowerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userFollowerTableViewCell.h; sourceTree = "<group>"; };
 		9C18434E1C3509260064BEFA /* userFollowerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userFollowerTableViewCell.m; sourceTree = "<group>"; };
-		9C1843501C35093E0064BEFA /* userFollowingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userFollowingTableViewCell.h; sourceTree = "<group>"; };
-		9C1843511C35093E0064BEFA /* userFollowingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userFollowingTableViewCell.m; sourceTree = "<group>"; };
 		9C1843561C3532180064BEFA /* huobanUserFeedComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huobanUserFeedComment.h; sourceTree = "<group>"; };
 		9C1843571C3532180064BEFA /* huobanUserFeedComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = huobanUserFeedComment.m; sourceTree = "<group>"; };
 		9C1843581C3532180064BEFA /* huobanUserFeedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huobanUserFeedData.h; sourceTree = "<group>"; };
@@ -990,6 +988,10 @@
 		9C18435F1C3532180064BEFA /* huobanUserFeedUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = huobanUserFeedUp.m; sourceTree = "<group>"; };
 		9C1843601C3532180064BEFA /* huobanUserFeedUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huobanUserFeedUser.h; sourceTree = "<group>"; };
 		9C1843611C3532180064BEFA /* huobanUserFeedUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = huobanUserFeedUser.m; sourceTree = "<group>"; };
+		9C3AB4C81C37CE36004977D4 /* HuoBanUserFollowData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuoBanUserFollowData.h; sourceTree = "<group>"; };
+		9C3AB4C91C37CE36004977D4 /* HuoBanUserFollowData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuoBanUserFollowData.m; sourceTree = "<group>"; };
+		9C3AB4CA1C37CE36004977D4 /* HuoBanUserFollowModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuoBanUserFollowModel.h; sourceTree = "<group>"; };
+		9C3AB4CB1C37CE36004977D4 /* HuoBanUserFollowModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuoBanUserFollowModel.m; sourceTree = "<group>"; };
 		9C72EDA61C327ECA00511A57 /* edit personal info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit personal info.png"; sourceTree = "<group>"; };
 		9C72EDA71C327ECA00511A57 /* edit personal info@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit personal info@3x.png"; sourceTree = "<group>"; };
 		9C72EDA81C327ECA00511A57 /* 展开提醒.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "展开提醒.png"; sourceTree = "<group>"; };
@@ -1010,8 +1012,6 @@
 		9C768E991C33B42A005F8D53 /* huobanUserBaseInfoCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huobanUserBaseInfoCreator.h; sourceTree = "<group>"; };
 		9C768E9A1C33B42A005F8D53 /* huobanUserBaseInfoAllproject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = huobanUserBaseInfoAllproject.m; sourceTree = "<group>"; };
 		9C768E9B1C33B42A005F8D53 /* huobanUserBaseInfoAllproject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huobanUserBaseInfoAllproject.h; sourceTree = "<group>"; };
-		9C768EA31C33C799005F8D53 /* UserFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserFeedTableViewCell.h; path = UserFeedCell/UserFeedTableViewCell.h; sourceTree = "<group>"; };
-		9C768EA41C33C799005F8D53 /* UserFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserFeedTableViewCell.m; path = UserFeedCell/UserFeedTableViewCell.m; sourceTree = "<group>"; };
 		9C9D7A491C2BEC5000E1A21D /* huobanLoginGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huobanLoginGuideViewController.h; sourceTree = "<group>"; };
 		9C9D7A4A1C2BEC5000E1A21D /* huobanLoginGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = huobanLoginGuideViewController.m; sourceTree = "<group>"; };
 		9C9D7A4B1C2BEC5000E1A21D /* huobanLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huobanLoginViewController.h; sourceTree = "<group>"; };
@@ -2768,6 +2768,7 @@
 		9C1843531C3531CD0064BEFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9C3AB4C71C37CE36004977D4 /* HuoBanUserFollowModel */,
 				9C1843551C3532180064BEFA /* huobanUserFeedModel */,
 			);
 			name = Model;
@@ -2790,6 +2791,18 @@
 				9C1843611C3532180064BEFA /* huobanUserFeedUser.m */,
 			);
 			path = huobanUserFeedModel;
+			sourceTree = "<group>";
+		};
+		9C3AB4C71C37CE36004977D4 /* HuoBanUserFollowModel */ = {
+			isa = PBXGroup;
+			children = (
+				9C3AB4C81C37CE36004977D4 /* HuoBanUserFollowData.h */,
+				9C3AB4C91C37CE36004977D4 /* HuoBanUserFollowData.m */,
+				9C3AB4CA1C37CE36004977D4 /* HuoBanUserFollowModel.h */,
+				9C3AB4CB1C37CE36004977D4 /* HuoBanUserFollowModel.m */,
+			);
+			name = HuoBanUserFollowModel;
+			path = "我New/HuoBanUserFollowModel";
 			sourceTree = "<group>";
 		};
 		9C72ED7E1C32791C00511A57 /* huobanUserBaseInfo */ = {
@@ -2829,8 +2842,6 @@
 		9C768EA21C33C71F005F8D53 /* UserFeedCell */ = {
 			isa = PBXGroup;
 			children = (
-				9C768EA31C33C799005F8D53 /* UserFeedTableViewCell.h */,
-				9C768EA41C33C799005F8D53 /* UserFeedTableViewCell.m */,
 			);
 			name = UserFeedCell;
 			sourceTree = "<group>";
@@ -2905,8 +2916,6 @@
 				9C18434B1C35090F0064BEFA /* userFeedTableViewCell.m */,
 				9C18434D1C3509260064BEFA /* userFollowerTableViewCell.h */,
 				9C18434E1C3509260064BEFA /* userFollowerTableViewCell.m */,
-				9C1843501C35093E0064BEFA /* userFollowingTableViewCell.h */,
-				9C1843511C35093E0064BEFA /* userFollowingTableViewCell.m */,
 			);
 			name = Cell;
 			path = UserOptionsCell;
@@ -3226,7 +3235,6 @@
 				000722FB1BB5271500BCF254 /* QNResponseInfo.m in Sources */,
 				000722851BB4F96700BCF254 /* AFURLResponseSerialization.m in Sources */,
 				00CC4AB51BB46A5E007FCCAE /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
-				9C1843521C35093E0064BEFA /* userFollowingTableViewCell.m in Sources */,
 				9C9D7A541C2BECD200E1A21D /* huobanAuthViewController.m in Sources */,
 				000722F41BB5271500BCF254 /* QNAsyncRun.m in Sources */,
 				00CC4A391BB46611007FCCAE /* MainTabBarViewController.m in Sources */,
@@ -3283,6 +3291,7 @@
 				9C9D7A501C2BEC5000E1A21D /* huobanLoginViewController.m in Sources */,
 				006212131BC0F67C0041C79A /* MKAnnotationView+WebCache.m in Sources */,
 				000723221BB52A0800BCF254 /* QNDnspodFree.m in Sources */,
+				9C3AB4CD1C37CE36004977D4 /* HuoBanUserFollowModel.m in Sources */,
 				0022157D1B9D278E00B39BC1 /* HomeDynamicImageTableViewCell.m in Sources */,
 				0062121A1BC0F67C0041C79A /* SDWebImageManager.m in Sources */,
 				00FB16331C22B922006DB174 /* RemindTableViewCell.m in Sources */,
@@ -3298,6 +3307,7 @@
 				006212191BC0F67C0041C79A /* SDWebImageDownloaderOperation.m in Sources */,
 				9C18434F1C3509260064BEFA /* userFollowerTableViewCell.m in Sources */,
 				00CC4AC41BB46BA6007FCCAE /* REMenuItem.m in Sources */,
+				9C3AB4CC1C37CE36004977D4 /* HuoBanUserFollowData.m in Sources */,
 				006212151BC0F67C0041C79A /* SDImageCache.m in Sources */,
 				002215DF1B9D71DE00B39BC1 /* TADotView.m in Sources */,
 				9C1843671C3532180064BEFA /* huobanUserFeedUser.m in Sources */,
@@ -3328,7 +3338,6 @@
 				00CC4AC21BB46BA6007FCCAE /* REMenu.m in Sources */,
 				006F23CE1BA2EBA1002CDCE1 /* UIView+MJExtension.m in Sources */,
 				003C54541C21129100A11115 /* OneProjectTableViewCell.m in Sources */,
-				9C768EA51C33C799005F8D53 /* UserFeedTableViewCell.m in Sources */,
 				000722FE1BB5271500BCF254 /* QNFileRecorder.m in Sources */,
 				009CDB971BAAE32B00A86DA5 /* HttpClassSelf.m in Sources */,
 				000722FD1BB5271500BCF254 /* QNUserAgent.m in Sources */,
