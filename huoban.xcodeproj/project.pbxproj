@@ -357,7 +357,6 @@
 		00FB16371C22D88A006DB174 /* morePreson@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FB16351C22D88A006DB174 /* morePreson@2x.png */; };
 		00FB16381C22D88A006DB174 /* morePreson@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FB16361C22D88A006DB174 /* morePreson@3x.png */; };
 		9C1843471C34C8E90064BEFA /* huoban.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C1843461C34C8E90064BEFA /* huoban.plist */; };
-		9C1843491C34CA450064BEFA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C1843481C34CA450064BEFA /* Info.plist */; };
 		9C18434C1C35090F0064BEFA /* userFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C18434B1C35090F0064BEFA /* userFeedTableViewCell.m */; };
 		9C18434F1C3509260064BEFA /* userFollowerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C18434E1C3509260064BEFA /* userFollowerTableViewCell.m */; };
 		9C1843621C3532180064BEFA /* huobanUserFeedComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1843571C3532180064BEFA /* huobanUserFeedComment.m */; };
@@ -2986,7 +2985,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = huoban;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = lyc;
 				TargetAttributes = {
 					006683C01B882EB700D1D5B3 = {
@@ -3137,7 +3136,6 @@
 				00F28E5B1BDB4659006711CF /* pount44@3x.png in Resources */,
 				00818D671BFF417F00AA4B28 /* tag@3x.png in Resources */,
 				0037D3071BEB75EC00A7D431 /* huoban_login_3x.png in Resources */,
-				9C1843491C34CA450064BEFA /* Info.plist in Resources */,
 				006A14511BD9190D0072D13F /* share12@6x.png in Resources */,
 				005C07C41BDB7CF50027D284 /* womenYES@2x.png in Resources */,
 				00818D931BFF553C00AA4B28 /* details_Love@2x.png in Resources */,

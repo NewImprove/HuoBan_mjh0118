@@ -11,9 +11,9 @@
 #import "CommonCrypto/CommonDigest.h"
 #import "CommonBase64.h"
 
-#define HTTPAddHuoBan  @"api.huoban.io:8877"
+//#define HTTPAddHuoBan  @"api.huoban.io:8877"
 //服务器测试地址
-//#define HTTPAddHuoBan  @"123.57.33.133:8888"
+#define HTTPAddHuoBan  @"123.57.33.133:8888"
 
 @implementation HttpClassSelf
 

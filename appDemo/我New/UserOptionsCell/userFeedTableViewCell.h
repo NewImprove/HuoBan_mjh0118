@@ -13,4 +13,6 @@
 
 @property (nonatomic,strong) huobanUserFeedData * model;
 
++ (CGFloat) feedTableViewCellWithModel:(huobanUserFeedData *) model;
+
 @end

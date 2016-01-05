@@ -99,14 +99,54 @@ typedef void(^changeOptionSelectedBlock)(NSInteger optionIndex);
             [optionView setBackgroundColor:OptionLineColor];
             self.selectedIndex = 0;
         }
+        
+        UIButton * buttonTypeName = [[UIButton alloc]init];
+        buttonTypeName.frame = CGRectMake(0, optionItemHeight/2, Main_Screen_Width/_amount, optionItemHeight/2);
+        [buttonTypeName setBackgroundColor:OptionItemColor];
+        
+        switch (i) {
+            case 0:
+            {
+                [buttonTypeName setTitle:@"项目" forState:UIControlStateNormal];
+            }
+                break;
+            case 1:
+            {
+                [buttonTypeName setTitle:@"动态" forState:UIControlStateNormal];
+            }
+                break;
+            case 2:
+            {
+                [buttonTypeName setTitle:@"关注" forState:UIControlStateNormal];
+            }
+                break;
+            case 3:
+            {
+                [buttonTypeName setTitle:@"被关注" forState:UIControlStateNormal];
+            }
+                break;
+            default:
+                break;
+        }
+        
+//        [buttonTypeName setTitle:@"项目" forState:UIControlStateNormal];
+        
+        [optionView addSubview:buttonTypeName];
+
         //设置button
-        UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, Main_Screen_Width/_amount, optionItemHeight)];
+        UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, Main_Screen_Width/_amount, optionItemHeight/2)];
+        button.backgroundColor = [UIColor redColor];
+//        [button setBackgroundColor:[UIColor colorWithWhite:0.5 alpha:0]];
+//        button.alpha = 0.1;
         button.tag = i;
         [button setBackgroundColor:RGBCOLOR(38, 56, 70)];
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [button addTarget:self action:@selector(buttonAction2:) forControlEvents:UIControlEventTouchUpInside];
+        
         [optionView addSubview:button];
         [self addSubview:optionView];
+        
+        
         //将button依次添加到属性userOptionViewItmes中
         [self.userOptionViewItems addObject:button];
     }

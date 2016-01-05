@@ -406,7 +406,7 @@ NSDate *_dateNowHomePage;
         
         [self.buttonDate setTitle:@" 已结束 " forState:UIControlStateNormal];
     }else{
-        
+
         [self.buttonDate setTitle:[NSString stringWithFormat:@"  剩余%i天  ",((int)[dataModelCard.endData timeIntervalSinceDate:_dateNowNowNow]/86400)] forState:UIControlStateNormal];
     }
 

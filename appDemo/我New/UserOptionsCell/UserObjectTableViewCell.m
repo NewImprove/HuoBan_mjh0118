@@ -40,12 +40,20 @@
     
     self.objectImage.layer.contents = (id)[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.images[0]]]].CGImage ;
     
-    [self.objectStateDiscribe setText:[NSString stringWithFormat:@"%@项目",model.title]];
-    self.objectState.text = model.type;
-
+    [self.objectStateDiscribe setText:[NSString stringWithFormat:@"%@",model.title]];
+    [self.objectStateDiscribe sizeToFit];
+    
+    [self objectStateStringWithModel:model];
+    
+    
+    [self.objectState sizeToFit];
+    
+//    [self compareNowWithDate:[model.endDate dataUsingEncoding:[NSStringEncodingDetectionAllowLossyKey]]];
+//    self compareNowWithDate:[model.endDate ]
     
 }
 
+//项目图片
 - (UIView *)objectImage {
     if (!_objectImage) {
         _objectImage = [[UIButton alloc]initWithFrame:CGRectMake(12, 12, 120, 120)];
@@ -59,6 +67,7 @@
     return _objectImage;
 }
 
+//项目描述
 -(UILabel *)objectStateDiscribe {
     if (!_objectStateDiscribe) {
         _objectStateDiscribe = [[UILabel alloc]initWithFrame:CGRectMake(140, 22, self.frame.size.width-140, 24)];
@@ -68,16 +77,18 @@
     return _objectStateDiscribe;
 }
 
+//项目状态
 - (UILabel *)objectState {
     if (!_objectState) {
-        _objectState = [[UILabel alloc] initWithFrame:CGRectMake(140, 58, self.frame.size.width-140, 12)];
+        _objectState = [[UILabel alloc] initWithFrame:CGRectMake(148, 58, self.frame.size.width-140, 12)];
         [_objectState setText:@"进行中"];
         [_objectState setTextColor:[UIColor grayColor]];
-        [_objectState setFont:[UIFont systemFontOfSize:12]];
+        [_objectState setFont:[UIFont systemFontOfSize:10]];
     }
     return _objectState;
 }
 
+//加入按钮
 - (UIButton *)objectJoin {
     if (!_objectJoin) {
         _objectJoin = [[UIButton alloc]initWithFrame:CGRectMake(140, 82, 72, 36)];
@@ -100,11 +111,56 @@
     return self;
 }
 
+
+//对不同状态下项目进行判断
+- (void)objectStateStringWithModel:(HuoBanUserProjectData *)model {
+    
+    
+    NSLog(@"%@",[model toDictionary]);
+    //注：type : create(创建的项目),order(加入的项目),focus(关注的项目),end(结束的项目)
+    if ([model.type isEqualToString:@"end"]) {
+        //项目结束处理
+        if (model.factMoney >= model.wantedMoney) {
+            NSLog(@"成功项目");
+            self.objectState.text = @"成功!";
+            [self.objectJoin setTitle:@"去群组" forState:UIControlStateNormal];
+        }
+        else {
+            NSLog(@"失败项目");
+            self.objectState.text = @"已结束";
+            [self.objectJoin setTitle:@"去群组" forState:UIControlStateNormal];
+        }
+    }
+    else if ([model.type isEqualToString:@"create"]) {
+        //创建的项目
+        self.objectState.text = @"进行中";
+    }
+    else if ([model.type isEqualToString:@"focus"]) {
+        //关注的项目
+        self.objectState.text = @"已关注";
+        [self.objectJoin setTitle:@"加入他们" forState:UIControlStateNormal];
+    }
+    else if ([model.type isEqualToString:@"order"]) {
+        //加入的项目
+        self.objectState.text = [NSString stringWithFormat:@"已支持%zi元",model.money];
+        [self.objectJoin setTitle:@"支持更多" forState:UIControlStateNormal];
+    }
+    
+}
+
+- (void) compareNowWithDate:(NSDate *)date  {
+    NSDate * _now = [[NSDate alloc]init];
+    [_now compare:date];
+}
+
+
 - (void)awakeFromNib {
     // Initialization code
     
     NSLog(@"UserObjectTableViewCell.frame:%@",NSStringFromCGRect(self.frame));
 }
+
+//- (void)
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

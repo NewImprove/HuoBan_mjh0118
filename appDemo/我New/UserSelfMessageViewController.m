@@ -244,6 +244,7 @@ HttpClassSelf *httpClassUserMessage;
         case 0:
             return [self.segmentItemCount[0] integerValue];
         case 1:
+            NSLog(@"%zi",[self.segmentItemCount[1] integerValue]);
             return [self.segmentItemCount[1] integerValue];
         case 2:
 //            return [self.segmentItemCount[2] integerValue];
@@ -265,7 +266,7 @@ HttpClassSelf *httpClassUserMessage;
             static NSString * UserObjectTableViewCellDequeueIdentifier = @"UserObjectTableViewCellcellID";
             UserObjectTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:UserObjectTableViewCellDequeueIdentifier];
             //取消cell的选中效果
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             if (!cell) {
                 cell = [[UserObjectTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:UserObjectTableViewCellDequeueIdentifier];
             }
@@ -279,7 +280,7 @@ HttpClassSelf *httpClassUserMessage;
             static NSString * UserFeedTableViewCellDequeueIdentifier = @"UserFeedTableViewCellcellID";
             userFeedTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:UserFeedTableViewCellDequeueIdentifier];
             //取消cell的选中效果
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             if (!cell) {
                 cell = [[userFeedTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:UserFeedTableViewCellDequeueIdentifier];
             }
@@ -325,8 +326,9 @@ HttpClassSelf *httpClassUserMessage;
             return 132;
             break;
         case 1:
+            
             //需要自适应高度
-            return 232;
+            return [userFeedTableViewCell feedTableViewCellWithModel:self.huobanUserFeedModel.data[indexPath.row]];
             break;
         case 2:
             return 56;
@@ -382,18 +384,21 @@ HttpClassSelf *httpClassUserMessage;
 - (void) userBaseInfoRequest {
 
 #warning 自己的信息不全，测试用给定tokenID的来测试
-    NSString * path =[NSString stringWithFormat: @"user/profile/user-%@/%@",[DataModel defaultUserBaseInfo].userInfomation.UserID,[DataModel defaultUserBaseInfo].userInfomation.tokenID];
+//    NSString * path =[NSString stringWithFormat: @"user/profile/user-%@/%@",[DataModel defaultUserBaseInfo].userInfomation.UserID,[DataModel defaultUserBaseInfo].userInfomation.tokenID];
     
-//    NSString * path =[NSString stringWithFormat: @"user/profile/user-5620a7bbb5a2a7a8fe41b83f/5620a7bbb5a2a7a8fe41b83f"];
+    NSString * path =[NSString stringWithFormat: @"user/profile/user-5620a7bbb5a2a7a8fe41b83f/5620a7bbb5a2a7a8fe41b83f"];
     
 //    NSString * path =[NSString stringWithFormat: @"user/profile/user-5620a7b7b5a2a7a8fe41b7eb/5620a7b7b5a2a7a8fe41b7eb"];
 
 
     [HttpTool getWithPath:path params:nil success:^(id JSON) {
         
-//        NSLog(@"\n%@",JSON);
-//        NSLog(@"以上是用户基本信息");
+        NSLog(@"\n%@",JSON);
+        NSLog(@"以上是用户基本信息");
         self.huobanUserBaseInfoModel = [[huobanUserBaseInfoModel alloc]initWithDictionary:JSON];
+        
+//        NSDictionary * jsonDict = JSON;
+        
         
     } failure:^(NSError *error) {
         NSLog(@"%@",error.localizedDescription);
@@ -411,7 +416,13 @@ HttpClassSelf *httpClassUserMessage;
     
     NSLog(@"userID%@,tokenID%@",dataModelUnLogin.userInfomation.UserID,dataModelUnLogin.userInfomation.tokenID );
     
-    [[HttpClassSelf new] getUserSelfInfoByUserID:dataModelUnLogin.userInfomation.UserID page:0 num:0 token:dataModelUnLogin.userInfomation.tokenID CallBackYES:^(MKNetworkOperation *operatioin) {
+    NSString * userID = dataModelUnLogin.userInfomation.UserID;
+    NSString * tokenID = dataModelUnLogin.userInfomation.tokenID;
+    
+    //金霖
+//    userID = @"5620a7bbb5a2a7a8fe41b83f"; 
+    
+    [[HttpClassSelf new] getUserSelfInfoByUserID:userID page:0 num:0 token:tokenID CallBackYES:^(MKNetworkOperation *operatioin) {
         NSData *data = [operatioin responseData];
         
         NSMutableDictionary *resdic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
@@ -425,7 +436,10 @@ HttpClassSelf *httpClassUserMessage;
 
 #pragma mark 用户动态网络请求
 - (void) userFeedListRequest {
-    NSString * userFeedListPath =[NSString stringWithFormat:@"/feed/u-%@/page-0/num-5/%@",self.userID,self.userTokenID];
+//    NSString * userFeedListPath =[NSString stringWithFormat:@"/feed/u-%@/page-0/num-20/%@",self.userID,self.userTokenID];
+    
+    NSString * userFeedListPath =[NSString stringWithFormat:@"/feed/u-5620a7bbb5a2a7a8fe41b83f/page-0/num-20/%@",self.userTokenID];
+
     NSLog(@"path:\napi.huoban.io:8877/%@",userFeedListPath);
     [HttpTool getWithPath:userFeedListPath params:nil success:^(id JSON) {
 //        NSLog(@"用户动态%@",JSON);
