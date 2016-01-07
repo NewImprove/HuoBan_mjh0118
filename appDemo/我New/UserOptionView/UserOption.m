@@ -28,6 +28,12 @@
 
 #define OptionLineColor  [UIColor colorWithRed:249.0/255.0f green:237/255.0f blue:49/255.0f alpha:1]
 #define OptionItemColor  [UIColor colorWithRed:38.0/255.0f green:56/255.0f blue:70/255.0f alpha:1]
+
+//字体宏
+#define PingFangSC(s)     [UIFont fontWithName:@"PingFangSC-Regular" size:s]
+
+
+
 //下划线的高度
 static NSInteger optionItemLineHeight = 2;
 
@@ -103,7 +109,12 @@ typedef void(^changeOptionSelectedBlock)(NSInteger optionIndex);
         UIButton * buttonTypeName = [[UIButton alloc]init];
         buttonTypeName.frame = CGRectMake(0, optionItemHeight/2, Main_Screen_Width/_amount, optionItemHeight/2);
         [buttonTypeName setBackgroundColor:OptionItemColor];
-        
+//        buttonTypeName.titleLabel.font = [UIFont systemFontOfSize:10];
+//        buttonTypeName.titleLabel.textColor = [UIColor redColor];
+        buttonTypeName.titleLabel.font = PingFangSC(12);
+        buttonTypeName.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 10, 0);
+        [buttonTypeName setTitleColor:RGBCOLOR(170, 170, 170) forState:UIControlStateNormal];
+        buttonTypeName.tag = i+100;
         switch (i) {
             case 0:
             {
@@ -130,19 +141,22 @@ typedef void(^changeOptionSelectedBlock)(NSInteger optionIndex);
         }
         
 //        [buttonTypeName setTitle:@"项目" forState:UIControlStateNormal];
-        
+        [buttonTypeName addTarget:self action:@selector(typeButtonAciton:) forControlEvents:UIControlEventTouchUpInside];
         [optionView addSubview:buttonTypeName];
 
         //设置button
         UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, Main_Screen_Width/_amount, optionItemHeight/2)];
         button.backgroundColor = [UIColor redColor];
+        button.titleEdgeInsets = UIEdgeInsetsMake(10, 0, 0, 0);
 //        [button setBackgroundColor:[UIColor colorWithWhite:0.5 alpha:0]];
 //        button.alpha = 0.1;
         button.tag = i;
         [button setBackgroundColor:RGBCOLOR(38, 56, 70)];
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [button addTarget:self action:@selector(buttonAction2:) forControlEvents:UIControlEventTouchUpInside];
-        
+//        [button addTarget:self action:@selector(buttonAction2:) forControlEvents:UIControlEventTouchUpInside];
+        button.titleLabel.font = PingFangSC(24);
+        //249,237,49
+        [button setTitleColor:RGBCOLOR(249, 237, 49) forState:UIControlStateNormal];
         [optionView addSubview:button];
         [self addSubview:optionView];
         
@@ -167,6 +181,21 @@ typedef void(^changeOptionSelectedBlock)(NSInteger optionIndex);
         }
     }
     [self.delegate segmentedControlSelectAtIndex:self.selectedIndex];
+}
+
+- (void) typeButtonAciton:(UIButton *)sender {
+    for (UIView * view in self.subviews) {
+        
+        if (view.tag == sender.tag - 100) {
+            view.backgroundColor = OptionLineColor;
+            self.selectedIndex = sender.tag - 100;
+        }
+        else{
+            view.backgroundColor = OptionItemColor;
+        }
+    }
+    [self.delegate segmentedControlSelectAtIndex:self.selectedIndex];
+
 }
 
 - (void) buttonAction2:(UIButton *)sender {

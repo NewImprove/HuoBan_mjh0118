@@ -74,6 +74,10 @@ typedef void (^HttpFailureBlock) (NSError *error);
                 success:(HttpSuccessBlock)success
                 failure:(HttpFailureBlock)failure;
 
+
++ (void)deleteWithPath:(NSString *)path params:(NSDictionary *)params success:(HttpSuccessBlock)success failure:(HttpFailureBlock)failure;
+
+
 /**
  *   取消网络请求
  */

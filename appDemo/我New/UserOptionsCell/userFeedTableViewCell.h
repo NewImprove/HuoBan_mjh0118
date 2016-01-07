@@ -9,7 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "huobanUserFeedData.h"
 
+
+@protocol UserFeedTableViewCellDelegate <NSObject>
+
+- (void) deleteFeedTableViewCellWithIndexPaht:(NSIndexPath *)indexpath;
+
+@end
+
 @interface userFeedTableViewCell : UITableViewCell
+
+@property (nonatomic,strong) NSIndexPath * indexpath;
+
+@property (nonatomic,assign) id<UserFeedTableViewCellDelegate>feeddelegate;
 
 @property (nonatomic,strong) huobanUserFeedData * model;
 

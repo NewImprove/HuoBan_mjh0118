@@ -79,9 +79,10 @@ NSInteger runtime;
     }else{
         [controllerHomePage.tabBarItem setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:255.0/255 green:51.0/255 blue:51.0/255 alpha:1] }
                                                      forState:UIControlStateNormal];
-        //[UIColor colorWithRed:255.0/255 green:51.0/255 blue:51.0/255 alpha:1]
+        
         [controllerProjectDynamic.tabBarItem setTitleTextAttributes:@{ NSForegroundColorAttributeName :[UIColor colorWithRed:61.0/255 green:163.0/255 blue:219.0/255 alpha:1] }
                                                            forState:UIControlStateNormal];
+        
         [controllerUserSelf.tabBarItem setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor yellowColor] }
                                                      forState:UIControlStateNormal];
 

@@ -90,6 +90,8 @@
         [self addSubview:self.userName];
         [self addSubview:self.describe];
         [self addSubview:self.chectWithUser];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+
     }
     return self;
 }

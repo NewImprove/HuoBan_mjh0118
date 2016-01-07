@@ -185,7 +185,7 @@
         <!--系统设置-->
         <scene sceneID="2eu-cI-ALn">
             <objects>
-                <viewController id="Fg1-5o-uEl" customClass="AppSettingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AppSettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fg1-5o-uEl" customClass="AppSettingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8bF-vv-r3G"/>
                         <viewControllerLayoutGuide type="bottom" id="tlz-4c-oAc"/>
@@ -6290,11 +6290,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="OrM-TF-bAD"/>
         <segue reference="3oa-Gw-745"/>
+        <segue reference="OrM-TF-bAD"/>
+        <segue reference="L0T-Tw-e28"/>
         <segue reference="rez-MJ-Wrg"/>
         <segue reference="VuS-vR-P0u"/>
-        <segue reference="Bqz-Me-OM2"/>
-        <segue reference="L0T-Tw-e28"/>
+        <segue reference="G4r-oZ-Wgj"/>
     </inferredMetricsTieBreakers>
 </document>

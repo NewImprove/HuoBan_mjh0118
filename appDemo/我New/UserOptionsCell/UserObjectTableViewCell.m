@@ -8,16 +8,25 @@
 
 #import "UserObjectTableViewCell.h"
 
+#import "UIImageView+WebCache.h"
+#import "SDImageCache.h"
+
 #define RGB(r,g,b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.f alpha:1.0]
 
-//fill:#33A3DB  RGB:51,163,219
+//fill:#33A3DB  RGB:51,163,219  去社群
 #define objectJoin_group_bgColor  [UIColor colorWithRed:51/255.f green:163/255.f blue:219/255.f alpha:1.0]
-//fill:#4FC2B1  RGB:79,194,177
+
+//fill:#4FC2B1  RGB:79,194,177  支持更多
 #define objectJoin_support_bgColor [UIColor colorWithRed:79/255.f green:194/255.f blue:177/255.f alpha:1.0]
+
+
+//字体宏
+#define PingFangSC(s)     [UIFont fontWithName:@"PingFangSC-Regular" size:s]
+
 
 @interface UserObjectTableViewCell ()
 
-@property (nonatomic,strong) UIView * objectImage;
+@property (nonatomic,strong) UIImageView * objectImage;
 
 @property (nonatomic,strong) UILabel * objectStateDiscribe;
 
@@ -38,8 +47,9 @@
 //    self.objectImage setBackgroundImage:<#(nullable UIImage *)#> forState:<#(UIControlState)#>
     //    self.customView.layer.contents = (id)[UIImage imageNamed:@"header_001"].CGImage;
     
-    self.objectImage.layer.contents = (id)[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.images[0]]]].CGImage ;
+//    self.objectImage.layer.contents = (id)[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.images[0]]]].CGImage ;
     
+    [self.objectImage sd_setImageWithURL:[NSURL URLWithString:model.images[0]]];
     [self.objectStateDiscribe setText:[NSString stringWithFormat:@"%@",model.title]];
     [self.objectStateDiscribe sizeToFit];
     
@@ -54,9 +64,9 @@
 }
 
 //项目图片
-- (UIView *)objectImage {
+- (UIImageView *)objectImage {
     if (!_objectImage) {
-        _objectImage = [[UIButton alloc]initWithFrame:CGRectMake(12, 12, 120, 120)];
+        _objectImage = [[UIImageView alloc]initWithFrame:CGRectMake(12, 12, 120, 120)];
 //setCornerRadius:YES
 //        _objectImage.layer setcor
         [_objectImage.layer setMasksToBounds:YES];
@@ -94,6 +104,7 @@
         _objectJoin = [[UIButton alloc]initWithFrame:CGRectMake(140, 82, 72, 36)];
         [_objectJoin setBackgroundColor:objectJoin_group_bgColor];
         _objectJoin.layer.cornerRadius = 6;
+        _objectJoin.titleLabel.font = PingFangSC(12);
     }
     return _objectJoin;
 }
@@ -102,11 +113,13 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        NSLog(@"UserObjectTableViewCell.frame:%@",NSStringFromCGRect(self.frame));
+//        NSLog(@"UserObjectTableViewCell.frame:%@",NSStringFromCGRect(self.frame));
         [self addSubview:self.objectImage];
         [self addSubview:self.objectStateDiscribe];
         [self addSubview:self.objectState];
         [self addSubview:self.objectJoin];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+
     }
     return self;
 }
@@ -157,7 +170,7 @@
 - (void)awakeFromNib {
     // Initialization code
     
-    NSLog(@"UserObjectTableViewCell.frame:%@",NSStringFromCGRect(self.frame));
+//    NSLog(@"UserObjectTableViewCell.frame:%@",NSStringFromCGRect(self.frame));
 }
 
 //- (void)

@@ -9,7 +9,8 @@
 #import "AppSettingViewController.h"
 #import "ToolClass.h"
 #import "DataModel.h"
-
+#import "huobanAuthViewController.h"
+#import "huobanLoginGuideViewController.h"
 @interface AppSettingViewController ()
 
 @end
@@ -111,7 +112,8 @@ DataModel *_dataModelAppSetting;
     
 }
 - (IBAction)buttonCancel:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)LoginViewControllerClose:(LoginViewController *)controller{
@@ -124,13 +126,33 @@ DataModel *_dataModelAppSetting;
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
-    if([segue.identifier isEqualToString:@"CancelLoginInSegue"]){
+    
+    NSLog(@"退出登录");
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    NSMutableArray * tabBarViewControllers = [NSMutableArray arrayWithArray:self.tabBarController.viewControllers];
 
-        LoginViewController *controller = segue.destinationViewController;
-        
-        controller.delegate = self;
-        
-    }
+    
+    huobanAuthViewController * authNavigationController = [[huobanAuthViewController alloc]initWithRootViewController:[[huobanLoginGuideViewController alloc] init]];
+    [tabBarViewControllers replaceObjectAtIndex:tabBarViewControllers.count-1 withObject:authNavigationController];
+    
+    //设置tabBar图标和字体
+    [authNavigationController.tabBarItem setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor yellowColor] }
+                                                       forState:UIControlStateNormal];
+    [authNavigationController.tabBarItem setImage:[[UIImage imageNamed:@"woNO"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ];
+    [authNavigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"woYES"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [authNavigationController.tabBarItem setTitle:@"我"];
+    
+    self.tabBarController.viewControllers = tabBarViewControllers;
+
+//
+//    if([segue.identifier isEqualToString:@"CancelLoginInSegue"]){
+//
+//        LoginViewController *controller = segue.destinationViewController;
+//        
+//        controller.delegate = self;
+//        
+//    }
 }
 
 @end

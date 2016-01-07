@@ -356,6 +356,7 @@
 		00FB16331C22B922006DB174 /* RemindTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB16321C22B922006DB174 /* RemindTableViewCell.m */; };
 		00FB16371C22D88A006DB174 /* morePreson@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FB16351C22D88A006DB174 /* morePreson@2x.png */; };
 		00FB16381C22D88A006DB174 /* morePreson@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FB16361C22D88A006DB174 /* morePreson@3x.png */; };
+		9C15F39C1C3BD01500801623 /* UserCreateProjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C15F39B1C3BD01500801623 /* UserCreateProjectTableViewCell.m */; };
 		9C1843471C34C8E90064BEFA /* huoban.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C1843461C34C8E90064BEFA /* huoban.plist */; };
 		9C18434C1C35090F0064BEFA /* userFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C18434B1C35090F0064BEFA /* userFeedTableViewCell.m */; };
 		9C18434F1C3509260064BEFA /* userFollowerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C18434E1C3509260064BEFA /* userFollowerTableViewCell.m */; };
@@ -969,6 +970,8 @@
 		00FB16321C22B922006DB174 /* RemindTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindTableViewCell.m; sourceTree = "<group>"; };
 		00FB16351C22D88A006DB174 /* morePreson@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "morePreson@2x.png"; sourceTree = "<group>"; };
 		00FB16361C22D88A006DB174 /* morePreson@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "morePreson@3x.png"; sourceTree = "<group>"; };
+		9C15F39A1C3BD01500801623 /* UserCreateProjectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCreateProjectTableViewCell.h; sourceTree = "<group>"; };
+		9C15F39B1C3BD01500801623 /* UserCreateProjectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCreateProjectTableViewCell.m; sourceTree = "<group>"; };
 		9C1843461C34C8E90064BEFA /* huoban.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = huoban.plist; sourceTree = "<group>"; };
 		9C1843481C34CA450064BEFA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C18434A1C35090F0064BEFA /* userFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userFeedTableViewCell.h; sourceTree = "<group>"; };
@@ -2915,6 +2918,8 @@
 				9C18434B1C35090F0064BEFA /* userFeedTableViewCell.m */,
 				9C18434D1C3509260064BEFA /* userFollowerTableViewCell.h */,
 				9C18434E1C3509260064BEFA /* userFollowerTableViewCell.m */,
+				9C15F39A1C3BD01500801623 /* UserCreateProjectTableViewCell.h */,
+				9C15F39B1C3BD01500801623 /* UserCreateProjectTableViewCell.m */,
 			);
 			name = Cell;
 			path = UserOptionsCell;
@@ -3264,6 +3269,7 @@
 				002215E01B9D71DE00B39BC1 /* TAPageControl.m in Sources */,
 				006F23B51BA2DD27002CDCE1 /* UserInfomation.m in Sources */,
 				000722821BB4F96700BCF254 /* AFSecurityPolicy.m in Sources */,
+				9C15F39C1C3BD01500801623 /* UserCreateProjectTableViewCell.m in Sources */,
 				007E03AA1BA80CF0001383C1 /* ProjectMoreStoryViewController.m in Sources */,
 				9C9D7A831C311DE500E1A21D /* UserHeaderView.m in Sources */,
 				0022153F1B9C3AFA00B39BC1 /* HomePageTableViewCell.m in Sources */,

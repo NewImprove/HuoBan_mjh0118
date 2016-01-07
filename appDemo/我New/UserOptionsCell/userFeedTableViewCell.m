@@ -8,6 +8,13 @@
 
 #import "userFeedTableViewCell.h"
 #import "HttpTool.h"
+#import "UIButton+WebCache.h"
+
+#define RGB(r,g,b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.f alpha:1.0]
+
+//fill:#33A3DB  RGB:51,163,219
+#define objectJoin_group_bgColor  [UIColor colorWithRed:51/255.f green:163/255.f blue:219/255.f alpha:1.0]
+
 
 // Screen Scale
 #define MainScreenScale         [[UIScreen mainScreen] scale]
@@ -28,7 +35,7 @@
 
 
 #define UserInfoView_Height 56.0f
-#define OptionView_Height 50.0f
+#define OptionView_Height 44.0f
 
 @interface userFeedTableViewCell ()
 
@@ -79,7 +86,7 @@
     
 //    NSLog(@"%zi",model);
     
-    return [userFeedTableViewCell contentViewHeightWithModel:model] + UserInfoView_Height + OptionView_Height +50;
+    return [userFeedTableViewCell contentViewHeightWithModel:model] + UserInfoView_Height + OptionView_Height +6;
 }
 
 //计算c高度的方法
@@ -87,7 +94,7 @@
     
 
     
-    return [userFeedTableViewCell articalHeightWithModel:model]+0;
+    return [userFeedTableViewCell articalHeightWithModel:model]+[userFeedTableViewCell imageViewHeightWithModel:model];
 }
 
 //返回article控件的高度
@@ -98,19 +105,29 @@
     
     CGFloat _articalHeight = [self autoSize:model.message].height;
     
-    CGFloat _feedImageHeight = 0;
     
     return _articalHeight;
 }
 
-
+//返回imageView的高度
++ (CGFloat) imageViewHeightWithModel:(huobanUserFeedData *)model {
+    
+    if (model.image.length) {
+        CGSize imageSize = [userFeedTableViewCell imageSizeWithString:model.image];
+        if (imageSize.width/imageSize.height*160 > Main_Screen_Width - 60 - 12) {
+            return imageSize.height/imageSize.width * (Main_Screen_Width - 60 - 12);
+        }
+        return 160;
+    }
+    return 0;
+}
 
 +(CGSize)autoSize:(NSString *)string{
     //定义UIFont
 //    UIFont *font=[UIFont systemFontOfSize:24];
     UIFont *font = PingFangSC(18);
     //设置最大的显示范围
-    CGSize size=CGSizeMake(Main_Screen_Width - 34 - 10 , 1000);
+    CGSize size=CGSizeMake(Main_Screen_Width - 50 - 10 , 1000);
     //设置文字属性的字典（注意先是字号，再是字体）
     NSDictionary *fontDic=[NSDictionary dictionaryWithObjectsAndKeys:font,NSFontAttributeName, nil];
     //用于设置文本绘制时占据的大小（也就是最大范围）
@@ -133,26 +150,43 @@
     _model = model;
     
     
-    static NSString * _str;
+//    NSLog(@"feedTableViewCell:%@",[model toDictionary]);
     
-    self.article.frame = CGRectMake(self.article.frame.origin.x, self.article.frame.origin.y, self.article.frame.size.width, [userFeedTableViewCell articalHeightWithModel:model]);
-    self.cellContentView.frame = CGRectMake(0, UserInfoView_Height, Main_Screen_Width,self.article.frame.size.height+self.feedImage.frame.size.height);
-    self.operationView.frame = CGRectMake(0, self.cellContentView.frame.origin.y+self.cellContentView.frame.size.height, Main_Screen_Width, OptionView_Height);
+    NSString * _str;
+    
+    
+    //动态图片 固定高度160
+    if (model.image.length) {
+        self.feedImage.frame = [self feedImageFrameWithModel:model];
+        [self.feedImage sd_setImageWithURL:[NSURL URLWithString:model.image] forState:UIControlStateNormal];
+        
+//        [self.feedImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.image]]] forState:UIControlStateNormal];
+        
+    }
 
+    self.article.frame = CGRectMake(self.article.frame.origin.x, self.article.frame.origin.y, self.article.frame.size.width, [userFeedTableViewCell articalHeightWithModel:model]);
     
-//    self.cellContentView.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
-//    [self.contentView reloadInputViews];
+    self.feedImage.frame = [self feedImageFrameWithModel:model];
     
-//    NSLog(@"article.frame:%@",NSStringFromCGRect(self.article.frame));
+//    NSLog(@"imageView.frame%@",NSStringFromCGRect(self.feedImage.frame));
+
+    self.cellContentView.frame = CGRectMake(0, UserInfoView_Height, Main_Screen_Width,self.article.frame.size.height+self.feedImage.frame.size.height);
+//    NSLog(@"self.cellContentView.frame:%@",NSStringFromCGRect(self.cellContentView.frame));
+    
+    self.operationView.frame = CGRectMake(0, self.cellContentView.frame.origin.y+self.cellContentView.frame.size.height, Main_Screen_Width, OptionView_Height);
+    
+    
+//    self.feedImage.frame = CGRectMake(self.feedImage.frame.origin.x, self.article.frame.origin.y + self.article.frame.size.height, <#CGFloat width#>, 160)
+    
     self.article.text = model.message;
     
-//    self.timeAlredy.text = model.time;
     
     self.timeAlredy.text = [self timeShouldShowWithString:model.time];
     
     [self.favorite setTitle:[NSString stringWithFormat:@"%@喜欢,%@评论",[model.up valueForKey:@"count"],[model.comment valueForKey:@"count"] ] forState:UIControlStateNormal];
     
-    [self.userHeader setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[model.user valueForKey:@"image"]]]] forState:UIControlStateNormal];
+    [self.userHeader sd_setImageWithURL:[NSURL URLWithString:[model.user valueForKey:@"image"]] forState:UIControlStateNormal];
+//    [self.userHeader setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[model.user valueForKey:@"image"]]]] forState:UIControlStateNormal];
     
     self.userName.text = [model.user valueForKey:@"name"];
     
@@ -164,6 +198,8 @@
     else {
         _str = @"";
     }
+    
+    
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[_str stringByAppendingString:[NSString stringWithFormat:@"@ %@",[self.model.project valueForKey:@"title"]]]];
     
     [str addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0, _str.length)];
@@ -201,6 +237,8 @@
         _userName = [[UILabel alloc]init];
         _userName.frame = CGRectMake(self.userHeader.frame.origin.x+self.userHeader.frame.size.width + _leftToUserHeader, _topToCellTop, _width, _hight);
         _userName.text = @"马锦航";
+        _userName.font = PingFangSC(14.7);
+        _userName.textColor = RGB(33, 33, 33);
 //        _userName.backgroundColor = [UIColor redColor];
     }
     return _userName;
@@ -216,7 +254,7 @@
         
         _createrDescribe.frame = CGRectMake(_userName.frame.origin.x, _userName.frame.origin.y+_userName.frame.size.height+_topToUserName, _width, _hight);
         
-        NSLog(@"%@\n%@",NSStringFromCGRect(self.userName.frame),NSStringFromCGRect(_createrDescribe.frame));
+//        NSLog(@"%@\n%@",NSStringFromCGRect(self.userName.frame),NSStringFromCGRect(_createrDescribe.frame));
         
 //        _createrDescribe.text = @"发起人@众筹遇见真正的伙伴";
         
@@ -238,7 +276,7 @@
 //        _createrDescribe.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
 //        _createrDescribe.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
 
-        _createrDescribe.font = [UIFont systemFontOfSize:12];
+        _createrDescribe.font = PingFangSC(12);
     }
     return _createrDescribe;
 }
@@ -251,7 +289,9 @@
         CGFloat _height = 20;
         _timeAlredy = [[UILabel alloc]init];
         _timeAlredy.frame = CGRectMake(Main_Screen_Width - 12 - _width, _topToCell, _width, _height);
-        _timeAlredy.textColor = [UIColor grayColor];
+        _timeAlredy.textColor = RGB(170, 170, 170);
+        _timeAlredy.font = PingFangSC(12);
+        _timeAlredy.textAlignment = 2;
 //        _timeAlredy.alignmentRectInsets
         _timeAlredy.text = @"25分钟前";
     }
@@ -266,7 +306,7 @@
         [_userInfoView addSubview:self.userName];
         [_userInfoView addSubview:self.createrDescribe];
         [_userInfoView addSubview:self.timeAlredy];
-//        [_userInfoView setBackgroundColor:[UIColor redColor]];
+        [_userInfoView setBackgroundColor:[UIColor whiteColor]];
     }
     return _userInfoView;
 }
@@ -274,11 +314,10 @@
 - (UIView *)cellContentView {
     if (!_cellContentView) {
         _cellContentView = [[UIView alloc]init];
-        NSLog(@"%@",NSStringFromCGRect(_cellContentView.frame));
-//        [_cellContentView setBackgroundColor:[UIColor blueColor]];
+//        NSLog(@"%@",NSStringFromCGRect(_cellContentView.frame));
         [_cellContentView addSubview:self.article];
         [_cellContentView addSubview:self.feedImage];
-//        [_cellContentView setBackgroundColor:[UIColor yellowColor]];
+        [_cellContentView setBackgroundColor:[UIColor whiteColor]];
         _cellContentView.frame = CGRectMake(0, UserInfoView_Height, Main_Screen_Width,self.article.frame.size.height+self.feedImage.frame.size.height);
     }
     
@@ -287,13 +326,16 @@
 - (UILabel *)article {
     if (!_article) {
         CGFloat _topToCell = 100;
-        CGFloat _leftToScreenLeft = 34;
+        CGFloat _leftToScreenLeft = 50;
         CGFloat _width = Main_Screen_Width - _leftToScreenLeft - 10;
         CGFloat _height = 80;
         _article = [[UILabel alloc]init];
         _article.frame = CGRectMake(_leftToScreenLeft,0, _width, 0);
         _article.numberOfLines = 0;
-        _article.font = PingFangSC(18);
+        _article.font = PingFangSC(14.7);
+        //33,33,33
+        _article.textColor = RGB(33, 33, 33);
+        
 //        [_article setBackgroundColor:[UIColor yellowColor]];
         _article.text = @"测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容";
         [_article sizeToFit];
@@ -307,11 +349,11 @@
 - (UIButton *)feedImage {
     if (!_feedImage) {
         CGFloat _leftToScreen = 60;
-        CGFloat _topToCellTop = 260;
-        CGFloat _width = 44;
-        CGFloat _height = 44;
+        CGFloat _width = 160;
+        CGFloat _height = 80;
         _feedImage = [[UIButton alloc]init];
-        _feedImage.frame = CGRectMake(_leftToScreen, 0, _width, _height);
+        [_feedImage setBackgroundColor:[UIColor greenColor]];
+        _feedImage.frame = CGRectMake(_leftToScreen, self.article.frame.origin.y + self.article.frame.size.height, 0, 0);
         [_feedImage setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
     }
     return _feedImage;
@@ -322,7 +364,7 @@
     if (!_operationView) {
         _operationView = [[UIView alloc]init];
         _operationView.frame = CGRectMake(0, self.cellContentView.frame.origin.y+self.cellContentView.frame.size.height, Main_Screen_Width, OptionView_Height);
-//        [_operationView setBackgroundColor:[UIColor blueColor]];
+        [_operationView setBackgroundColor:[UIColor whiteColor]];
         [_operationView addSubview:self.delegateFeed];
         [_operationView addSubview:self.favorite];
     }
@@ -330,27 +372,31 @@
 }
 - (UIButton *)delegateFeed {
     if (!_delegateFeed) {
-        CGFloat _leftToScreen = 60;
+        CGFloat _leftToScreen = 50;
         CGFloat _topToCellTop = 360;
         CGFloat _width = 44;
         CGFloat _height = 44;
         _delegateFeed = [[UIButton alloc]init];
         _delegateFeed.frame = CGRectMake(_leftToScreen, 0, _width, _height);
-        [_delegateFeed setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        [_delegateFeed setImage:[UIImage imageNamed:@"DeleteDynamic"] forState:UIControlStateNormal];
+        [_delegateFeed setImageEdgeInsets:UIEdgeInsetsMake(11, 11, 11, 11)];
+        [_delegateFeed addTarget:self action:@selector(deleteThisCell) forControlEvents:UIControlEventTouchUpInside];
     }
     return _delegateFeed;
 }
 
 - (UIButton *)favorite {
     if (!_favorite) {
-        CGFloat _leftToScreen = 160;
+        CGFloat _rightToScreen = 12;
         CGFloat _topToCellTop = 160;
         CGFloat _width = 100;
         CGFloat _height = 44;
         _favorite = [[UIButton alloc]init];
-        _favorite.frame = CGRectMake(_leftToScreen, 0, _width, _height);
-        [_favorite setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        [_favorite setFont:[UIFont systemFontOfSize:10]];
+        _favorite.frame = CGRectMake(Main_Screen_Width - _rightToScreen - _width, 0, _width, _height);
+        [_favorite setTitleColor:RGB(170, 170, 170) forState:UIControlStateNormal];
+//        [_favorite setBackgroundColor:[UIColor orangeColor]];
+//        [_favorite setFont:[UIFont systemFontOfSize:10]];
+        _favorite.titleLabel.font = PingFangSC(12);
     }
     return _favorite;
 }
@@ -416,6 +462,36 @@
     return NULL;
 }
 
+- (CGRect) feedImageFrameWithModel:(huobanUserFeedData *)model {
+    CGRect _rect;
+    
+    if (!model.image.length) {
+        _rect = CGRectMake(self.feedImage.frame.origin.x, self.article.frame.origin.y + self.article.frame.size.height, 0, 0);
+        return _rect;
+    }
+    
+    CGSize imageSize = [userFeedTableViewCell imageSizeWithString:model.image];
+    
+    
+    _rect = CGRectMake(self.feedImage.frame.origin.x, self.article.frame.origin.y + self.article.frame.size.height, imageSize.width/imageSize.height*160, 160);
+
+    if (_rect.size.width > Main_Screen_Width - 60 - 12) {
+        _rect = CGRectMake(self.feedImage.frame.origin.x, self.article.frame.origin.y + self.article.frame.size.height,Main_Screen_Width - 60 - 12, imageSize.height/imageSize.width * (Main_Screen_Width - 60 - 12));
+    }
+    return _rect;
+}
+
++ (CGSize) imageSizeWithString:(NSString *)imageUrlStr {
+    
+    
+    //http://images.huoban.io/userDynamic/ptYSAdAntRBLeJyTICSnXn398ERgq81J_NnMynEd:N4y7_ETHmXsqdSM-1qw0qBwDILc=:eyJzY29wZSI6Imh1b2JhbiIsImRlYWRsaW5lIjoxNDUwNjg2NzU3fQ==823984036!397*530
+    
+    NSArray * sizeArray = [imageUrlStr componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"!*"]];
+    
+    
+    return CGSizeMake([sizeArray[1] floatValue], [sizeArray[2] floatValue]);
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }
@@ -433,8 +509,30 @@
         [self addSubview:self.userInfoView];
         [self addSubview:self.cellContentView];
         [self addSubview:self.operationView];
+        
+//        [UIColor whiteColor]
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        UIImageView * backgroundView = [[UIImageView alloc]init];
+        
+        self.backgroundView = backgroundView;
+        [self setBackgroundView:backgroundView];
+        
+        
+        
+        
+        self.backgroundColor = RGB(238, 238, 238);
+//        self.backgroundColor = [UIColor redColor];
     }
     return self;
+}
+
+
+
+
+- (void) deleteThisCell {
+    
+    NSLog(@"删除按钮");
+    [self.feeddelegate deleteFeedTableViewCellWithIndexPaht:self.indexpath];
 }
 
 

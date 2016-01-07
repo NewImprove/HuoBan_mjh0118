@@ -722,6 +722,7 @@ UIView *_viewTop;
         NSMutableDictionary *dic = _cellTopData[(indexPath.row - 1)];
     
     [self performSegueWithIdentifier:@"Projectdetails" sender:dic[@"_id"]];
+    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

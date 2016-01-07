@@ -8,6 +8,8 @@
 
 #import "UserHeaderView.h"
 #import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+
 @implementation UserHeaderView
 
 
@@ -18,6 +20,7 @@
         _userHeaderButton = [[UIButton alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2-36, 12, 72, 72)];
         _userHeaderButton.layer.masksToBounds = YES;
         _userHeaderButton.layer.cornerRadius = 36;
+        
         [_userHeaderButton setBackgroundColor:[UIColor whiteColor]];
     }
     return _userHeaderButton;
@@ -26,7 +29,13 @@
 //UserHeaderUrl的set方法
 - (void)setUserHeaderUrl:(NSString *)userHeaderUrl {
     _userHeaderUrl = userHeaderUrl;
-    [self.userHeaderButton setBackgroundImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_userHeaderUrl]]] forState:UIControlStateNormal];
+    
+    NSLog(@"userHeaderUrluserHeaderUrluserHeaderUrluserHeaderUrluserHeaderUrl%@",userHeaderUrl);
+    if (userHeaderUrl) {
+        [self.userHeaderButton sd_setImageWithURL:[NSURL URLWithString:_userHeaderUrl] forState:UIControlStateNormal];
+    }
+    
+//    [self.userHeaderButton setBackgroundImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_userHeaderUrl]]] forState:UIControlStateNormal];
     [self addSubview:self.userHeaderButton];
     
 }
@@ -37,6 +46,12 @@
     if (self) {
         self.userHeaderUrl = headerUrl;
 //        [self addSubview:self.userHeaderImageView];
+        UIImageView * imageView = [UIImageView new];
+        imageView.frame = CGRectMake(self.userHeaderButton.frame.origin.x + self.userHeaderButton.frame.size.width, self.userHeaderButton.frame.origin.y + 45, 24, 24);
+//        [imageView setBackgroundColor:[UIColor lightGrayColor]];
+        [imageView setImage:[UIImage imageNamed:@"edit personal info"]];
+        [self addSubview:imageView];
+        
     }
     return self;
 }

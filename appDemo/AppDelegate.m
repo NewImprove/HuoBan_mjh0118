@@ -288,11 +288,21 @@
     //    huobanAuthViewController * authNavigationController = [[huobanAuthViewController alloc]init];
     
 NSLog(@"%ld",(long)[[NSUserDefaults standardUserDefaults]integerForKey:@"runtimes"]);
+    
+    
     if([[NSUserDefaults standardUserDefaults]integerForKey:@"runtimes"]){
         NSLog(@"当前用户已经登录");
     huobanAuthViewController * authNavigationController = [[huobanAuthViewController alloc]initWithRootViewController:[[UserSelfMessageViewController alloc] init]];
         
         [tabBarViewControllers replaceObjectAtIndex:tabBarViewControllers.count-1 withObject:authNavigationController];
+        //设置tabBar图标和字体
+        [authNavigationController.tabBarItem setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor yellowColor] }
+                                                           forState:UIControlStateNormal];
+        [authNavigationController.tabBarItem setImage:[[UIImage imageNamed:@"woNO"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ];
+    
+        [authNavigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"woYES"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        
+        [authNavigationController.tabBarItem setTitle:@"我"];
         
         loginTabBarvc.viewControllers = tabBarViewControllers;
 
@@ -300,6 +310,14 @@ NSLog(@"%ld",(long)[[NSUserDefaults standardUserDefaults]integerForKey:@"runtime
         NSLog(@"当前用户未登录");
         huobanAuthViewController * authNavigationController = [[huobanAuthViewController alloc]initWithRootViewController:[[huobanLoginGuideViewController alloc] init]];
         [tabBarViewControllers replaceObjectAtIndex:tabBarViewControllers.count-1 withObject:authNavigationController];
+        
+        //设置tabBar图标和字体
+        [authNavigationController.tabBarItem setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor yellowColor] }
+                                                     forState:UIControlStateNormal];
+        [authNavigationController.tabBarItem setImage:[[UIImage imageNamed:@"woNO"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ];
+        [authNavigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"woYES"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        [authNavigationController.tabBarItem setTitle:@"我"];
+
         loginTabBarvc.viewControllers = tabBarViewControllers;
         
     }

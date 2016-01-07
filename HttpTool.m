@@ -115,6 +115,22 @@ static NSString *const kBaseURLString = @"http://api.huoban.io:8877";
     [opration start];
 }
 
+#pragma mark delete
++ (void)deleteWithPath:(NSString *)path params:(NSDictionary *)params success:(HttpSuccessBlock)success failure:(HttpFailureBlock)failure
+{
+    AFHttpClient *manager = [AFHttpClient sharedClient];
+    [manager DELETE:path parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        if (success == nil) return;
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        if (failure == nil) return;
+        failure(error);
+    }];
+}
+
+
 #pragma mark -
 #pragma mark 取消网络请求
 + (void)cancelAllRequest {
