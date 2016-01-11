@@ -745,7 +745,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vt6-PR-Sfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2369.5" y="2881.5"/>
+            <point key="canvasLocation" x="-2367.5" y="2873.5"/>
         </scene>
         <!--我NEW-->
         <scene sceneID="eU3-hv-6fx">
@@ -5195,7 +5195,7 @@
         <!--Talk View Controller-->
         <scene sceneID="uVE-N3-koy">
             <objects>
-                <viewController id="GEe-ek-CtI" customClass="TalkViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TalkViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GEe-ek-CtI" customClass="TalkViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1if-oL-kc5"/>
                         <viewControllerLayoutGuide type="bottom" id="M9y-MG-wye"/>
@@ -5536,7 +5536,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXa-KI-i9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3181.5" y="3773.5"/>
+            <point key="canvasLocation" x="-3241.5" y="3981.5"/>
         </scene>
         <!--Other User Info View Controller-->
         <scene sceneID="S7R-lq-djH">
@@ -6290,11 +6290,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3oa-Gw-745"/>
+        <segue reference="EnY-fu-5tb"/>
         <segue reference="OrM-TF-bAD"/>
         <segue reference="L0T-Tw-e28"/>
-        <segue reference="rez-MJ-Wrg"/>
-        <segue reference="VuS-vR-P0u"/>
+        <segue reference="wG9-8z-TdR"/>
+        <segue reference="uKg-tF-8qD"/>
         <segue reference="G4r-oZ-Wgj"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -27,6 +27,7 @@
 #import "HuoBanUserFollowModel.h"
 #import "UserCreateProjectTableViewCell.h"
 #import "ProjectDetailsViewController.h"
+#import "TalkViewController.h"
 
 // MainScreen Height&Width
 #define Main_Screen_Height      [[UIScreen mainScreen] bounds].size.height
@@ -47,7 +48,9 @@
 
 
 static NSInteger userHeaderViewHeight = 108;
-static NSInteger userOptionViewHeight = 72;
+
+static NSInteger userOptionViewHeight = 57;
+//static NSInteger userOptionViewHeight = 72;
 
 @interface UserSelfMessageViewController ()<UITableViewDelegate,UITableViewDataSource,optionSegmentedControlDelegate,UserFeedTableViewCellDelegate>
 
@@ -191,6 +194,7 @@ HttpClassSelf *httpClassUserMessage;
 - (UserOption *)userOptionView {
     if (!_userOptionView) {
         _userOptionView = [[UserOption alloc]initWithFrame:CGRectMake(0, userHeaderViewHeight, self.view.frame.size.width, userOptionViewHeight) userOptionsArray:nil];
+//        _userOptionView.segmentCount = 4;
         _userOptionView.delegate = self;
     }
     return _userOptionView;
@@ -429,12 +433,25 @@ HttpClassSelf *httpClassUserMessage;
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     switch (self.segmentIndex) {
-        case 0:
+        case 1:
         {
-            HuoBanUserProjectData * model = self.userProjectModel.data[indexPath.row];
-//            NSDictionary * dict = self.userProjectModel.data[indexPath.row];
-//            NSLog(@"%@",model.idField);
+            HuoBanUserProjectData * model = self.huobanUserFeedModel.data[indexPath.row];
             
+            
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+            
+            AppSettingViewController * appSettingVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"AppSettingViewController"];
+            
+            
+            TalkViewController * talkViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"TalkViewController"];
+//            talkViewController.view.frame = [UIScreen mainScreen].bounds;
+            NSLog(@"%@",model.idField);
+//            TalkViewController * talkViewController = [[TalkViewController alloc]init];
+            talkViewController.strfeedID = model.idField;
+            
+            [self presentViewController:talkViewController animated:YES completion:nil];
+//            [self.navigationController pushViewController:talkViewController animated:YES];
+//            [self.navigationController pushViewController:appSettingVC animated:YES];
 //            [self performSegueWithIdentifier:@"Projectdetails" sender:model.idField];
             
         }
@@ -644,6 +661,7 @@ HttpClassSelf *httpClassUserMessage;
     //加载headerView
     [self.view addSubview:self.userHeaderView];
 
+    [self setNavigationController];
     //基本信息网络请求
     [self userBaseInfoRequest];
     
@@ -662,6 +680,8 @@ HttpClassSelf *httpClassUserMessage;
 - (void) showUserBaseInfo {
     self.navigationItem.title = self.userBaseInfoModel.userInfomation.Name;
     self.userHeaderView.userHeaderUrl = self.userBaseInfoModel.userInfomation.ImagePreson;
+    
+    
 }
 
 - (void) leftBarButtonAction {
@@ -756,7 +776,7 @@ HttpClassSelf *httpClassUserMessage;
 
 - (void)showOkayCancelAlertWithIndexPath:(NSIndexPath *)indexPath {
     NSString *title = NSLocalizedString(@"提示", nil);
-    NSString *message = NSLocalizedString(@"您确定要删除吗？", nil);
+    NSString *message = NSLocalizedString(@"您确定要删除吗", nil);
     NSString *cancelButtonTitle = NSLocalizedString(@"取消", nil);
     NSString *otherButtonTitle = NSLocalizedString(@"确定", nil);
     

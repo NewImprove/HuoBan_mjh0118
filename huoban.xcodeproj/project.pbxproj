@@ -357,6 +357,8 @@
 		00FB16371C22D88A006DB174 /* morePreson@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FB16351C22D88A006DB174 /* morePreson@2x.png */; };
 		00FB16381C22D88A006DB174 /* morePreson@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FB16361C22D88A006DB174 /* morePreson@3x.png */; };
 		9C15F39C1C3BD01500801623 /* UserCreateProjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C15F39B1C3BD01500801623 /* UserCreateProjectTableViewCell.m */; };
+		9C15F39F1C3F657800801623 /* SelfInfoOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C15F39E1C3F657800801623 /* SelfInfoOption.m */; };
+		9C15F3A21C3FA5DD00801623 /* UserEditInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C15F3A11C3FA5DD00801623 /* UserEditInfoViewController.m */; };
 		9C1843471C34C8E90064BEFA /* huoban.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C1843461C34C8E90064BEFA /* huoban.plist */; };
 		9C18434C1C35090F0064BEFA /* userFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C18434B1C35090F0064BEFA /* userFeedTableViewCell.m */; };
 		9C18434F1C3509260064BEFA /* userFollowerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C18434E1C3509260064BEFA /* userFollowerTableViewCell.m */; };
@@ -368,13 +370,13 @@
 		9C1843671C3532180064BEFA /* huobanUserFeedUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1843611C3532180064BEFA /* huobanUserFeedUser.m */; };
 		9C3AB4CC1C37CE36004977D4 /* HuoBanUserFollowData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AB4C91C37CE36004977D4 /* HuoBanUserFollowData.m */; };
 		9C3AB4CD1C37CE36004977D4 /* HuoBanUserFollowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3AB4CB1C37CE36004977D4 /* HuoBanUserFollowModel.m */; };
-		9C72EDAE1C327ECA00511A57 /* edit personal info.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDA61C327ECA00511A57 /* edit personal info.png */; };
+		9C72EDAE1C327ECA00511A57 /* edit personal info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDA61C327ECA00511A57 /* edit personal info@2x.png */; };
 		9C72EDAF1C327ECA00511A57 /* edit personal info@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDA71C327ECA00511A57 /* edit personal info@3x.png */; };
-		9C72EDB01C327ECA00511A57 /* 展开提醒.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDA81C327ECA00511A57 /* 展开提醒.png */; };
+		9C72EDB01C327ECA00511A57 /* 展开提醒@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDA81C327ECA00511A57 /* 展开提醒@2x.png */; };
 		9C72EDB11C327ECA00511A57 /* 展开提醒@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDA91C327ECA00511A57 /* 展开提醒@3x.png */; };
-		9C72EDB21C327ECA00511A57 /* 我_私信.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDAA1C327ECA00511A57 /* 我_私信.png */; };
+		9C72EDB21C327ECA00511A57 /* 我_私信@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDAA1C327ECA00511A57 /* 我_私信@2x.png */; };
 		9C72EDB31C327ECA00511A57 /* 我_私信@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDAB1C327ECA00511A57 /* 我_私信@3x.png */; };
-		9C72EDB41C327ECA00511A57 /* 系统设置.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDAC1C327ECA00511A57 /* 系统设置.png */; };
+		9C72EDB41C327ECA00511A57 /* 系统设置@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDAC1C327ECA00511A57 /* 系统设置@2x.png */; };
 		9C72EDB51C327ECA00511A57 /* 系统设置@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C72EDAD1C327ECA00511A57 /* 系统设置@3x.png */; };
 		9C768E9C1C33B42A005F8D53 /* huobanUserBaseInfoProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C768E901C33B42A005F8D53 /* huobanUserBaseInfoProject.m */; };
 		9C768E9D1C33B42A005F8D53 /* huobanUserBaseInfoPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C768E921C33B42A005F8D53 /* huobanUserBaseInfoPost.m */; };
@@ -972,6 +974,10 @@
 		00FB16361C22D88A006DB174 /* morePreson@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "morePreson@3x.png"; sourceTree = "<group>"; };
 		9C15F39A1C3BD01500801623 /* UserCreateProjectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCreateProjectTableViewCell.h; sourceTree = "<group>"; };
 		9C15F39B1C3BD01500801623 /* UserCreateProjectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCreateProjectTableViewCell.m; sourceTree = "<group>"; };
+		9C15F39D1C3F657800801623 /* SelfInfoOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfInfoOption.h; sourceTree = "<group>"; };
+		9C15F39E1C3F657800801623 /* SelfInfoOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfInfoOption.m; sourceTree = "<group>"; };
+		9C15F3A01C3FA5DD00801623 /* UserEditInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserEditInfoViewController.h; sourceTree = "<group>"; };
+		9C15F3A11C3FA5DD00801623 /* UserEditInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserEditInfoViewController.m; sourceTree = "<group>"; };
 		9C1843461C34C8E90064BEFA /* huoban.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = huoban.plist; sourceTree = "<group>"; };
 		9C1843481C34CA450064BEFA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C18434A1C35090F0064BEFA /* userFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userFeedTableViewCell.h; sourceTree = "<group>"; };
@@ -994,13 +1000,13 @@
 		9C3AB4C91C37CE36004977D4 /* HuoBanUserFollowData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuoBanUserFollowData.m; sourceTree = "<group>"; };
 		9C3AB4CA1C37CE36004977D4 /* HuoBanUserFollowModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuoBanUserFollowModel.h; sourceTree = "<group>"; };
 		9C3AB4CB1C37CE36004977D4 /* HuoBanUserFollowModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuoBanUserFollowModel.m; sourceTree = "<group>"; };
-		9C72EDA61C327ECA00511A57 /* edit personal info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit personal info.png"; sourceTree = "<group>"; };
+		9C72EDA61C327ECA00511A57 /* edit personal info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit personal info@2x.png"; sourceTree = "<group>"; };
 		9C72EDA71C327ECA00511A57 /* edit personal info@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit personal info@3x.png"; sourceTree = "<group>"; };
-		9C72EDA81C327ECA00511A57 /* 展开提醒.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "展开提醒.png"; sourceTree = "<group>"; };
+		9C72EDA81C327ECA00511A57 /* 展开提醒@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "展开提醒@2x.png"; sourceTree = "<group>"; };
 		9C72EDA91C327ECA00511A57 /* 展开提醒@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "展开提醒@3x.png"; sourceTree = "<group>"; };
-		9C72EDAA1C327ECA00511A57 /* 我_私信.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我_私信.png"; sourceTree = "<group>"; };
+		9C72EDAA1C327ECA00511A57 /* 我_私信@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我_私信@2x.png"; sourceTree = "<group>"; };
 		9C72EDAB1C327ECA00511A57 /* 我_私信@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我_私信@3x.png"; sourceTree = "<group>"; };
-		9C72EDAC1C327ECA00511A57 /* 系统设置.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "系统设置.png"; sourceTree = "<group>"; };
+		9C72EDAC1C327ECA00511A57 /* 系统设置@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "系统设置@2x.png"; sourceTree = "<group>"; };
 		9C72EDAD1C327ECA00511A57 /* 系统设置@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "系统设置@3x.png"; sourceTree = "<group>"; };
 		9C768E901C33B42A005F8D53 /* huobanUserBaseInfoProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = huobanUserBaseInfoProject.m; sourceTree = "<group>"; };
 		9C768E911C33B42A005F8D53 /* huobanUserBaseInfoProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = huobanUserBaseInfoProject.h; sourceTree = "<group>"; };
@@ -2829,13 +2835,13 @@
 		9C72EDA51C327ECA00511A57 /* icon */ = {
 			isa = PBXGroup;
 			children = (
-				9C72EDA61C327ECA00511A57 /* edit personal info.png */,
+				9C72EDA61C327ECA00511A57 /* edit personal info@2x.png */,
 				9C72EDA71C327ECA00511A57 /* edit personal info@3x.png */,
-				9C72EDA81C327ECA00511A57 /* 展开提醒.png */,
+				9C72EDA81C327ECA00511A57 /* 展开提醒@2x.png */,
 				9C72EDA91C327ECA00511A57 /* 展开提醒@3x.png */,
-				9C72EDAA1C327ECA00511A57 /* 我_私信.png */,
+				9C72EDAA1C327ECA00511A57 /* 我_私信@2x.png */,
 				9C72EDAB1C327ECA00511A57 /* 我_私信@3x.png */,
-				9C72EDAC1C327ECA00511A57 /* 系统设置.png */,
+				9C72EDAC1C327ECA00511A57 /* 系统设置@2x.png */,
 				9C72EDAD1C327ECA00511A57 /* 系统设置@3x.png */,
 			);
 			path = icon;
@@ -2889,9 +2895,11 @@
 		9C9D7A7D1C2BF19A00E1A21D /* 我Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9C768EA21C33C71F005F8D53 /* UserFeedCell */,
 				9C9D7A901C31205200E1A21D /* UserSelfMessageViewController.h */,
 				9C9D7A911C31205200E1A21D /* UserSelfMessageViewController.m */,
+				9C15F3A01C3FA5DD00801623 /* UserEditInfoViewController.h */,
+				9C15F3A11C3FA5DD00801623 /* UserEditInfoViewController.m */,
+				9C768EA21C33C71F005F8D53 /* UserFeedCell */,
 				9C9D7A7E1C2BF19A00E1A21D /* UserHeaderView */,
 				9C9D7A7F1C2BF19A00E1A21D /* Cell */,
 				9C9D7A801C2BF19A00E1A21D /* UserOptionView */,
@@ -2930,6 +2938,8 @@
 			children = (
 				9C9D7A841C311E2D00E1A21D /* UserOption.h */,
 				9C9D7A851C311E2D00E1A21D /* UserOption.m */,
+				9C15F39D1C3F657800801623 /* SelfInfoOption.h */,
+				9C15F39E1C3F657800801623 /* SelfInfoOption.m */,
 			);
 			path = UserOptionView;
 			sourceTree = "<group>";
@@ -3091,7 +3101,7 @@
 				00818D8D1BFF4F1D00AA4B28 /* choosefrom album@3x.png in Resources */,
 				9C9D7A631C2BEDD200E1A21D /* 可点击确认@3x.png in Resources */,
 				007D041F1C1E6E2100AA9645 /* DeleteDynamic@3x.png in Resources */,
-				9C72EDB41C327ECA00511A57 /* 系统设置.png in Resources */,
+				9C72EDB41C327ECA00511A57 /* 系统设置@2x.png in Resources */,
 				0042FEE31C0EA724006381FA /* payChoseButtonYES@2x.png in Resources */,
 				006F23C71BA2EBA1002CDCE1 /* MJRefresh.bundle in Resources */,
 				0042FEE41C0EA724006381FA /* payChoseButtonYES@3x.png in Resources */,
@@ -3107,7 +3117,7 @@
 				00818D841BFF4C1600AA4B28 /* women_like_grey_3x.png in Resources */,
 				0044D9F21BC578DC006DA740 /* CloseRed@2x.png in Resources */,
 				00818D591BFF3FBC00AA4B28 /* women_more_2x.png in Resources */,
-				9C72EDB21C327ECA00511A57 /* 我_私信.png in Resources */,
+				9C72EDB21C327ECA00511A57 /* 我_私信@2x.png in Resources */,
 				009052AD1C0DAA0D004E85D5 /* fireGreen@3x.png in Resources */,
 				00818D811BFF4C1600AA4B28 /* women_like_blue_2x.png in Resources */,
 				00B7648F1BF1DFAD001BA433 /* womenEmpty_add@3x.png in Resources */,
@@ -3129,7 +3139,7 @@
 				9C72EDB51C327ECA00511A57 /* 系统设置@3x.png in Resources */,
 				00818D9E1BFF60EA00AA4B28 /* ProjectJoined@2x.png in Resources */,
 				008C40571C15904400672F74 /* UMSCommentDetailController.xib in Resources */,
-				9C72EDAE1C327ECA00511A57 /* edit personal info.png in Resources */,
+				9C72EDAE1C327ECA00511A57 /* edit personal info@2x.png in Resources */,
 				00F98C1B1BC7A4D500115116 /* movieFullscreen@2x.png in Resources */,
 				00818D9A1BFF57A400AA4B28 /* back_yellow_3x.png in Resources */,
 				006BF32F1BAD607A0094C86A /* PEPhotoCropEditor.bundle in Resources */,
@@ -3192,7 +3202,7 @@
 				00818D7C1BFF488000AA4B28 /* close_grey_@3x.png in Resources */,
 				00FB16281C22B3E5006DB174 /* remind@2x.png in Resources */,
 				00818D651BFF417F00AA4B28 /* add@3x.png in Resources */,
-				9C72EDB01C327ECA00511A57 /* 展开提醒.png in Resources */,
+				9C72EDB01C327ECA00511A57 /* 展开提醒@2x.png in Resources */,
 				005C07C01BDB7CF50027D284 /* womenYES@3x.png in Resources */,
 				008C405B1C15904400672F74 /* UMShareEditViewControlleriPad.xib in Resources */,
 				00686D1A1BD769840040712C /* buttonPayUP100@3x.png in Resources */,
@@ -3242,6 +3252,7 @@
 				000722F41BB5271500BCF254 /* QNAsyncRun.m in Sources */,
 				00CC4A391BB46611007FCCAE /* MainTabBarViewController.m in Sources */,
 				00C155C11C245A30008F8B15 /* RemindMessage.m in Sources */,
+				9C15F39F1C3F657800801623 /* SelfInfoOption.m in Sources */,
 				006F23CD1BA2EBA1002CDCE1 /* UIScrollView+MJRefresh.m in Sources */,
 				00F98C0D1BC7A4D500115116 /* ALButton.m in Sources */,
 				00CC4A351BB465E6007FCCAE /* CreateDynamicViewController.m in Sources */,
@@ -3305,6 +3316,7 @@
 				00C155C41C246656008F8B15 /* AryRemindMessage.m in Sources */,
 				00CC4A3B1BB466EB007FCCAE /* ProjectDetailsViewController.m in Sources */,
 				002215D11B9D71C900B39BC1 /* UIView+SDExtension.m in Sources */,
+				9C15F3A21C3FA5DD00801623 /* UserEditInfoViewController.m in Sources */,
 				00CC4A2F1BB46568007FCCAE /* SDCycleScrollView.m in Sources */,
 				9C9D7A8C1C311E7A00E1A21D /* UserObjectTableViewCell.m in Sources */,
 				00CC4A311BB46583007FCCAE /* TAAnimatedDotView.m in Sources */,

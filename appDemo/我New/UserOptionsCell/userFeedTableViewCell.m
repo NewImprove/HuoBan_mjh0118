@@ -352,7 +352,7 @@
         CGFloat _width = 160;
         CGFloat _height = 80;
         _feedImage = [[UIButton alloc]init];
-        [_feedImage setBackgroundColor:[UIColor greenColor]];
+//        [_feedImage setBackgroundColor:[UIColor greenColor]];
         _feedImage.frame = CGRectMake(_leftToScreen, self.article.frame.origin.y + self.article.frame.size.height, 0, 0);
         [_feedImage setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
     }

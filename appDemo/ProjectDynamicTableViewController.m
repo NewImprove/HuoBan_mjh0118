@@ -212,7 +212,7 @@ NSString *_strDeleteFeedID;
 -(void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
-    
+    NSLog(@"ProjectDynamicTableViewController这是我们主界面");
     
 }
 -(void)viewDidAppear:(BOOL)animated{

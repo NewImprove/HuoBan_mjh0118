@@ -6,7 +6,7 @@
 //  Copyright © 2015年 lyc. All rights reserved.
 //
 
-#import "UserOption.h"
+#import "SelfInfoOption.h"
 
 // Screen Scale
 #define MainScreenScale         [[UIScreen mainScreen] scale]
@@ -38,16 +38,14 @@
 static NSInteger optionItemLineHeight = 2;
 
 //选项按钮的高度
-static NSInteger optionItemHeight = 55;
-
-//static NSInteger optionItemHeight = 70;
+static NSInteger optionItemHeight = 70;
 
 typedef void(^changeOptionSelectedBlock)(NSInteger optionIndex);
 
-//下划线的颜色 
+//下划线的颜色
 // #F9ED31   RGB:249,237,49
 
-@implementation UserOption
+@implementation SelfInfoOption
 
 
 - (instancetype)initWithFrame:(CGRect)frame userOptionsArray:(NSArray *)userOptionsArray
@@ -56,7 +54,6 @@ typedef void(^changeOptionSelectedBlock)(NSInteger optionIndex);
     if (self) {
         
 #warning 2>>4
-        self.segmentCount = 2;
         
     }
     return self;
@@ -98,12 +95,12 @@ typedef void(^changeOptionSelectedBlock)(NSInteger optionIndex);
         [((UIButton *)self.userOptionViewItems[2]) setTitle:[NSString stringWithFormat:@"%zi",dataModel.followers] forState:UIControlStateNormal];
         [((UIButton *)self.userOptionViewItems[3]) setTitle:[NSString stringWithFormat:@"%zi",dataModel.following] forState:UIControlStateNormal];
     }
-
+    
     
 }
 
 /**
-  用户选项视图的View
+ 用户选项视图的View
  Amount:总个数
  */
 - (void)userOptionsWithAmount:(NSInteger)amount {
@@ -117,7 +114,6 @@ typedef void(^changeOptionSelectedBlock)(NSInteger optionIndex);
     for (int i = 0; i < _amount; i ++) {
         //设置optionView背景色为下划线的颜色
         UIView * optionView = [[UIView alloc]initWithFrame:CGRectMake(i * Main_Screen_Width/_amount, 0, Main_Screen_Width/_amount, optionItemHeight+optionItemLineHeight)];
-        
         optionView.tag = i;
         [optionView setBackgroundColor:OptionItemColor];
         if (i == 0) {
@@ -126,24 +122,14 @@ typedef void(^changeOptionSelectedBlock)(NSInteger optionIndex);
         }
         
         UIButton * buttonTypeName = [[UIButton alloc]init];
-        //上下布局
-//                buttonTypeName.frame = CGRectMake(0, optionItemHeight/2, Main_Screen_Width/_amount, optionItemHeight/2);
-        //左右布局
-            buttonTypeName.frame = CGRectMake(Main_Screen_Width/_amount/2, 0, Main_Screen_Width/_amount/2, optionItemHeight);
-
-        
-        
-        NSLog(@"%@",NSStringFromCGRect(buttonTypeName.frame));
+        buttonTypeName.frame = CGRectMake(0, optionItemHeight/2, Main_Screen_Width/_amount, optionItemHeight/2);
         [buttonTypeName setBackgroundColor:OptionItemColor];
-//        [buttonTypeName setBackgroundColor:[UIColor orangeColor]];
-//        buttonTypeName.titleLabel.font = [UIFont systemFontOfSize:10];
-//        buttonTypeName.titleLabel.textColor = [UIColor redColor];
+        //        buttonTypeName.titleLabel.font = [UIFont systemFontOfSize:10];
+        //        buttonTypeName.titleLabel.textColor = [UIColor redColor];
         buttonTypeName.titleLabel.font = PingFangSC(12);
-//        buttonTypeName.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 10, 0);
-        buttonTypeName.titleEdgeInsets = UIEdgeInsetsMake(0, -50, 0, 0);
+        buttonTypeName.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 10, 0);
         [buttonTypeName setTitleColor:RGBCOLOR(170, 170, 170) forState:UIControlStateNormal];
         buttonTypeName.tag = i+100;
-        
         switch (i) {
             case 0:
             {
@@ -169,31 +155,24 @@ typedef void(^changeOptionSelectedBlock)(NSInteger optionIndex);
                 break;
         }
         
-//        [buttonTypeName setTitle:@"项目" forState:UIControlStateNormal];
+        //        [buttonTypeName setTitle:@"项目" forState:UIControlStateNormal];
         [buttonTypeName addTarget:self action:@selector(typeButtonAciton:) forControlEvents:UIControlEventTouchUpInside];
-        
         [optionView addSubview:buttonTypeName];
-        //设置button
-        //上下布局
-        UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, Main_Screen_Width/_amount/2, optionItemHeight)];
-
-        //左右布局
-//        UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, Main_Screen_Width/_amount, optionItemHeight/2)];
-        button.backgroundColor = [UIColor redColor];
-        button.titleEdgeInsets = UIEdgeInsetsMake(0, 50, 0, 0);
         
-//        [button setBackgroundColor:[UIColor colorWithWhite:0.5 alpha:0]];
-//        button.alpha = 0.1;
+        //设置button
+        UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, Main_Screen_Width/_amount, optionItemHeight/2)];
+        button.backgroundColor = [UIColor redColor];
+        button.titleEdgeInsets = UIEdgeInsetsMake(10, 0, 0, 0);
+        //        [button setBackgroundColor:[UIColor colorWithWhite:0.5 alpha:0]];
+        //        button.alpha = 0.1;
         button.tag = i;
         [button setBackgroundColor:RGBCOLOR(38, 56, 70)];
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-//        [button addTarget:self action:@selector(buttonAction2:) forControlEvents:UIControlEventTouchUpInside];
+        //        [button addTarget:self action:@selector(buttonAction2:) forControlEvents:UIControlEventTouchUpInside];
         button.titleLabel.font = PingFangSC(24);
         //249,237,49
         [button setTitleColor:RGBCOLOR(249, 237, 49) forState:UIControlStateNormal];
-//        [button setBackgroundColor:[UIColor orangeColor]];
         [optionView addSubview:button];
-        
         [self addSubview:optionView];
         
         
@@ -205,7 +184,7 @@ typedef void(^changeOptionSelectedBlock)(NSInteger optionIndex);
 
 - (void) buttonAction:(UIButton *)sender {
     NSLog(@"UserOptionButtonAction");
-
+    
     for (UIView * view in self.subviews) {
         
         if (view.tag == sender.tag) {
@@ -231,7 +210,7 @@ typedef void(^changeOptionSelectedBlock)(NSInteger optionIndex);
         }
     }
     [self.delegate segmentedControlSelectAtIndex:self.selectedIndex];
-
+    
 }
 
 - (void) buttonAction2:(UIButton *)sender {
@@ -239,11 +218,11 @@ typedef void(^changeOptionSelectedBlock)(NSInteger optionIndex);
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

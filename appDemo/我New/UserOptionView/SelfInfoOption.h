@@ -9,16 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "huobanUserBaseInfoData.h"
 
-@protocol optionSegmentedControlDelegate <NSObject>
+@protocol selfInfoOptionSegmentedControlDelegate <NSObject>
 
 //代理方法 获取当前下标
 - (void) segmentedControlSelectAtIndex:(NSInteger)index;
 
 @end
 
-@interface UserOption : UIView
+@interface SelfInfoOption : UIView
 
-@property (assign , nonatomic) id<optionSegmentedControlDelegate>delegate;
+@property (assign , nonatomic) id<selfInfoOptionSegmentedControlDelegate>delegate;
 
 @property (nonatomic,strong) NSArray * userOptionsArray;
 

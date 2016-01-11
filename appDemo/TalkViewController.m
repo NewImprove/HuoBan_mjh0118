@@ -510,9 +510,12 @@ NSMutableArray *_aryPresonMessageComment;
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
+    
     self.scrollViewTalk.contentSize = _sizeScorll;
     
     _viewModeSettingAppear = NO;
+    
+    NSLog(@"TalkViewController");
     
 //    self.scrollViewTalk.layer.borderWidth = 2;
 //    self.scrollViewTalk.layer.borderColor = [UIColor redColor].CGColor;
