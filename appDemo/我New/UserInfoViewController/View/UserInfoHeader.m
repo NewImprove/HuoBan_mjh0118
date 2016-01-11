@@ -1,27 +1,26 @@
 //
-//  UserHeaderView.m
+//  UserInfoHeader.m
 //  huoban
 //
-//  Created by 马锦航 on 15/12/14.
-//  Copyright © 2015年 lyc. All rights reserved.
+//  Created by 马锦航 on 16/1/11.
+//  Copyright © 2016年 lyc. All rights reserved.
 //
 
-#import "UserHeaderView.h"
+#import "UserInfoHeader.h"
 #import "UIImageView+WebCache.h"
 #import "UIButton+WebCache.h"
 
-@implementation UserHeaderView
 
+
+@implementation UserInfoHeader 
 
 
 //直径为72 居中的一个圆形button距headerView顶部12px
 - (UIButton *)userHeaderButton {
     if (!_userHeaderButton) {
-        _userHeaderButton = [[UIButton alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2-36, 12, 72, 72)];
+        _userHeaderButton = [[UIButton alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2-36, 18, 72, 72)];
         _userHeaderButton.layer.masksToBounds = YES;
         _userHeaderButton.layer.cornerRadius = 36;
-        
-        [_userHeaderButton setBackgroundColor:[UIColor whiteColor]];
         [_userHeaderButton addTarget:self action:@selector(userHeaderButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _userHeaderButton;
@@ -36,7 +35,7 @@
         [self.userHeaderButton sd_setImageWithURL:[NSURL URLWithString:_userHeaderUrl] forState:UIControlStateNormal];
     }
     
-//    [self.userHeaderButton setBackgroundImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_userHeaderUrl]]] forState:UIControlStateNormal];
+    //    [self.userHeaderButton setBackgroundImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_userHeaderUrl]]] forState:UIControlStateNormal];
     [self addSubview:self.userHeaderButton];
     
 }
@@ -46,20 +45,21 @@
     self = [super init];
     if (self) {
         self.userHeaderUrl = headerUrl;
-//        [self addSubview:self.userHeaderImageView];
-        UIImageView * imageView = [UIImageView new];
-        imageView.frame = CGRectMake(self.userHeaderButton.frame.origin.x + self.userHeaderButton.frame.size.width, self.userHeaderButton.frame.origin.y + 45, 24, 24);
-//        [imageView setBackgroundColor:[UIColor lightGrayColor]];
-        [imageView setImage:[UIImage imageNamed:@"edit personal info"]];
-        [self addSubview:imageView];
+//        UIImageView * imageView = [UIImageView new];
+//        imageView.frame = CGRectMake(self.userHeaderButton.frame.origin.x + self.userHeaderButton.frame.size.width, self.userHeaderButton.frame.origin.y + 45, 24, 24);
+//        [imageView setImage:[UIImage imageNamed:@"edit personal info"]];
+//        [self addSubview:imageView];
+        
+
         
     }
     return self;
 }
 
 - (void) userHeaderButtonAction:(UIButton *)sender {
-    [self.delegate pushToUserInfoViewController];
+    [self.delegate headerViewClick];
 }
+
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -67,6 +67,5 @@
     // Drawing code
     
 }
-
 
 @end

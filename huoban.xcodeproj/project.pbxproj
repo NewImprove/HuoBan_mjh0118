@@ -358,7 +358,11 @@
 		00FB16381C22D88A006DB174 /* morePreson@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FB16361C22D88A006DB174 /* morePreson@3x.png */; };
 		9C15F39C1C3BD01500801623 /* UserCreateProjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C15F39B1C3BD01500801623 /* UserCreateProjectTableViewCell.m */; };
 		9C15F39F1C3F657800801623 /* SelfInfoOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C15F39E1C3F657800801623 /* SelfInfoOption.m */; };
-		9C15F3A21C3FA5DD00801623 /* UserEditInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C15F3A11C3FA5DD00801623 /* UserEditInfoViewController.m */; };
+		9C15F3AF1C43403E00801623 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C15F3AE1C43403E00801623 /* UserInfoViewController.m */; };
+		9C15F3B21C4355E100801623 /* UserInfoHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C15F3B11C4355E100801623 /* UserInfoHeader.m */; };
+		9C15F3B51C43915800801623 /* UserInfoEditeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C15F3B41C43915800801623 /* UserInfoEditeViewController.m */; };
+		9C15F3B81C43B71700801623 /* UserInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C15F3B71C43B71700801623 /* UserInfoItem.m */; };
+		9C15F3BB1C43BB3B00801623 /* UserInfoEditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C15F3BA1C43BB3B00801623 /* UserInfoEditTableViewCell.m */; };
 		9C1843471C34C8E90064BEFA /* huoban.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C1843461C34C8E90064BEFA /* huoban.plist */; };
 		9C18434C1C35090F0064BEFA /* userFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C18434B1C35090F0064BEFA /* userFeedTableViewCell.m */; };
 		9C18434F1C3509260064BEFA /* userFollowerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C18434E1C3509260064BEFA /* userFollowerTableViewCell.m */; };
@@ -976,8 +980,16 @@
 		9C15F39B1C3BD01500801623 /* UserCreateProjectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCreateProjectTableViewCell.m; sourceTree = "<group>"; };
 		9C15F39D1C3F657800801623 /* SelfInfoOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfInfoOption.h; sourceTree = "<group>"; };
 		9C15F39E1C3F657800801623 /* SelfInfoOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfInfoOption.m; sourceTree = "<group>"; };
-		9C15F3A01C3FA5DD00801623 /* UserEditInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserEditInfoViewController.h; sourceTree = "<group>"; };
-		9C15F3A11C3FA5DD00801623 /* UserEditInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserEditInfoViewController.m; sourceTree = "<group>"; };
+		9C15F3AD1C43403E00801623 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
+		9C15F3AE1C43403E00801623 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		9C15F3B01C4355E100801623 /* UserInfoHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoHeader.h; sourceTree = "<group>"; };
+		9C15F3B11C4355E100801623 /* UserInfoHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoHeader.m; sourceTree = "<group>"; };
+		9C15F3B31C43915800801623 /* UserInfoEditeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoEditeViewController.h; sourceTree = "<group>"; };
+		9C15F3B41C43915800801623 /* UserInfoEditeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoEditeViewController.m; sourceTree = "<group>"; };
+		9C15F3B61C43B71700801623 /* UserInfoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoItem.h; sourceTree = "<group>"; };
+		9C15F3B71C43B71700801623 /* UserInfoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoItem.m; sourceTree = "<group>"; };
+		9C15F3B91C43BB3B00801623 /* UserInfoEditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoEditTableViewCell.h; sourceTree = "<group>"; };
+		9C15F3BA1C43BB3B00801623 /* UserInfoEditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoEditTableViewCell.m; sourceTree = "<group>"; };
 		9C1843461C34C8E90064BEFA /* huoban.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = huoban.plist; sourceTree = "<group>"; };
 		9C1843481C34CA450064BEFA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C18434A1C35090F0064BEFA /* userFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userFeedTableViewCell.h; sourceTree = "<group>"; };
@@ -2773,6 +2785,48 @@
 			name = "「详情」更多";
 			sourceTree = "<group>";
 		};
+		9C15F3A31C433EE200801623 /* UserInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9C15F3AA1C43403E00801623 /* View */,
+				9C15F3AB1C43403E00801623 /* Model */,
+				9C15F3AC1C43403E00801623 /* Controller */,
+			);
+			name = UserInfoViewController;
+			path = "我New/UserInfoViewController";
+			sourceTree = "<group>";
+		};
+		9C15F3AA1C43403E00801623 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9C15F3B01C4355E100801623 /* UserInfoHeader.h */,
+				9C15F3B11C4355E100801623 /* UserInfoHeader.m */,
+				9C15F3B61C43B71700801623 /* UserInfoItem.h */,
+				9C15F3B71C43B71700801623 /* UserInfoItem.m */,
+				9C15F3B91C43BB3B00801623 /* UserInfoEditTableViewCell.h */,
+				9C15F3BA1C43BB3B00801623 /* UserInfoEditTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9C15F3AB1C43403E00801623 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9C15F3AC1C43403E00801623 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9C15F3AD1C43403E00801623 /* UserInfoViewController.h */,
+				9C15F3AE1C43403E00801623 /* UserInfoViewController.m */,
+				9C15F3B31C43915800801623 /* UserInfoEditeViewController.h */,
+				9C15F3B41C43915800801623 /* UserInfoEditeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		9C1843531C3531CD0064BEFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -2885,6 +2939,7 @@
 		9C9D7A661C2BEF3F00E1A21D /* 我New */ = {
 			isa = PBXGroup;
 			children = (
+				9C15F3A31C433EE200801623 /* UserInfoViewController */,
 				9C1843531C3531CD0064BEFA /* Model */,
 				9C9D7A931C3142B700E1A21D /* HuoBanUserProjectModel */,
 				9C9D7A7D1C2BF19A00E1A21D /* 我Controller */,
@@ -2897,8 +2952,6 @@
 			children = (
 				9C9D7A901C31205200E1A21D /* UserSelfMessageViewController.h */,
 				9C9D7A911C31205200E1A21D /* UserSelfMessageViewController.m */,
-				9C15F3A01C3FA5DD00801623 /* UserEditInfoViewController.h */,
-				9C15F3A11C3FA5DD00801623 /* UserEditInfoViewController.m */,
 				9C768EA21C33C71F005F8D53 /* UserFeedCell */,
 				9C9D7A7E1C2BF19A00E1A21D /* UserHeaderView */,
 				9C9D7A7F1C2BF19A00E1A21D /* Cell */,
@@ -3237,6 +3290,7 @@
 				000723271BB52A1000BCF254 /* QNDes.m in Sources */,
 				007D04231C1E9F8D00AA9645 /* OneProjectDynamicTableViewController.m in Sources */,
 				006F23C91BA2EBA1002CDCE1 /* MJRefreshConst.m in Sources */,
+				9C15F3B21C4355E100801623 /* UserInfoHeader.m in Sources */,
 				006276DD1BE85B76008B2689 /* PaySuccessViewController.m in Sources */,
 				9C9D7A511C2BEC5000E1A21D /* huobanRegisterViewController.m in Sources */,
 				006F51081BB18D8200251A62 /* CreateDynamicNavigationController.m in Sources */,
@@ -3258,6 +3312,7 @@
 				00CC4A351BB465E6007FCCAE /* CreateDynamicViewController.m in Sources */,
 				000722871BB4F96700BCF254 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				0046EB601BF32AFB00F06E1F /* UIView+LQXkeyboard.m in Sources */,
+				9C15F3AF1C43403E00801623 /* UserInfoViewController.m in Sources */,
 				0062121E1BC0F67C0041C79A /* UIImage+MultiFormat.m in Sources */,
 				0006E9B61B9EFE430020CB80 /* ProjectDynamicSelf.m in Sources */,
 				002215D41B9D71D300B39BC1 /* NSData+SDDataCache.m in Sources */,
@@ -3272,6 +3327,7 @@
 				000723281BB52A1000BCF254 /* QNHex.m in Sources */,
 				00CC4AB81BB46A5E007FCCAE /* MKNetworkOperation.m in Sources */,
 				00E2F8E21BBA7FB500354DD2 /* OtherUserInfoViewController.m in Sources */,
+				9C15F3B81C43B71700801623 /* UserInfoItem.m in Sources */,
 				00148ED61BEAF265003CF879 /* SendProjectListTableViewController.m in Sources */,
 				9C9D7A4F1C2BEC5000E1A21D /* huobanLoginGuideViewController.m in Sources */,
 				000722FF1BB5271500BCF254 /* QNConfiguration.m in Sources */,
@@ -3306,6 +3362,8 @@
 				9C9D7A501C2BEC5000E1A21D /* huobanLoginViewController.m in Sources */,
 				006212131BC0F67C0041C79A /* MKAnnotationView+WebCache.m in Sources */,
 				000723221BB52A0800BCF254 /* QNDnspodFree.m in Sources */,
+				9C15F3BB1C43BB3B00801623 /* UserInfoEditTableViewCell.m in Sources */,
+				9C15F3B51C43915800801623 /* UserInfoEditeViewController.m in Sources */,
 				9C3AB4CD1C37CE36004977D4 /* HuoBanUserFollowModel.m in Sources */,
 				0022157D1B9D278E00B39BC1 /* HomeDynamicImageTableViewCell.m in Sources */,
 				0062121A1BC0F67C0041C79A /* SDWebImageManager.m in Sources */,
@@ -3316,7 +3374,6 @@
 				00C155C41C246656008F8B15 /* AryRemindMessage.m in Sources */,
 				00CC4A3B1BB466EB007FCCAE /* ProjectDetailsViewController.m in Sources */,
 				002215D11B9D71C900B39BC1 /* UIView+SDExtension.m in Sources */,
-				9C15F3A21C3FA5DD00801623 /* UserEditInfoViewController.m in Sources */,
 				00CC4A2F1BB46568007FCCAE /* SDCycleScrollView.m in Sources */,
 				9C9D7A8C1C311E7A00E1A21D /* UserObjectTableViewCell.m in Sources */,
 				00CC4A311BB46583007FCCAE /* TAAnimatedDotView.m in Sources */,

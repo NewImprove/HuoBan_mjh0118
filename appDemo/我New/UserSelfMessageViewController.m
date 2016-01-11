@@ -28,6 +28,10 @@
 #import "UserCreateProjectTableViewCell.h"
 #import "ProjectDetailsViewController.h"
 #import "TalkViewController.h"
+#import "UserInfoViewController.h"
+#import "UserInfoEditeViewController.h"
+
+
 
 // MainScreen Height&Width
 #define Main_Screen_Height      [[UIScreen mainScreen] bounds].size.height
@@ -42,6 +46,7 @@
 
 #define Navigation_TextColor [UIColor colorWithRed:170/255.0f green:170/255.0f blue:170/255.f alpha:1.0]
 
+#define Navigation_TextColor [UIColor colorWithRed:170/255.0f green:170/255.0f blue:170/255.f alpha:1.0]
 
 
 #define HeaderView_bgColor [UIColor colorWithRed:20/255.0f green:30/255.0f blue:40/255.f alpha:1.0]
@@ -52,7 +57,7 @@ static NSInteger userHeaderViewHeight = 108;
 static NSInteger userOptionViewHeight = 57;
 //static NSInteger userOptionViewHeight = 72;
 
-@interface UserSelfMessageViewController ()<UITableViewDelegate,UITableViewDataSource,optionSegmentedControlDelegate,UserFeedTableViewCellDelegate>
+@interface UserSelfMessageViewController ()<UITableViewDelegate,UITableViewDataSource,optionSegmentedControlDelegate,UserFeedTableViewCellDelegate,UserHeaderViewClickDelegate>
 
 #pragma mark 全局参数tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
@@ -182,10 +187,10 @@ HttpClassSelf *httpClassUserMessage;
 
 - (UserHeaderView *)userHeaderView {
     if (!_userHeaderView) {
-#warning 需要传数据
         _userHeaderView = [[UserHeaderView alloc]initWithHeaderUrl:nil];
         [_userHeaderView setFrame:CGRectMake(0, 0, self.view.frame.size.width, userHeaderViewHeight)];
         [_userHeaderView setBackgroundColor:HeaderView_bgColor];
+        _userHeaderView.delegate = self;
 //        [_userHeaderView setBackgroundColor:[UIColor colorWithRed:21 green:30 blue:40 alpha:1.0]];
     }
     return _userHeaderView;
@@ -273,8 +278,6 @@ HttpClassSelf *httpClassUserMessage;
 
 #pragma mark 对navigation中包括左右按钮title显示的设置
 - (void) setNavigationController {
-    
-#warning navi背景色
     //导航栏背景
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:21.0/255 green:30.0/255 blue:40.0/255 alpha:1]];
     
@@ -655,6 +658,9 @@ HttpClassSelf *httpClassUserMessage;
     
 //    [self showUserBaseInfo];
     
+    self.hidesBottomBarWhenPushed = NO;
+    [self showTabBar];
+    
     //showTableView
     [self.view addSubview:self.userTableView];
     
@@ -690,27 +696,31 @@ HttpClassSelf *httpClassUserMessage;
 
 - (void) rightBarButtonAction {
     
-//    ZJDuLiController *vc = [self.storyboardinstantiateViewControllerWithIdentifier:@"DuLi"]
-    
-    //            ProjectDynamicTableViewController  *controllerProjectAll =[storyboard instantiateViewControllerWithIdentifier:@"ProjectAllController"];
-
-//    loginTabBarvc = [self.window.rootViewController.storyboard
-//                     instantiateViewControllerWithIdentifier:@"mainTabBarView"];
-
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-
     AppSettingViewController * appSettingVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"AppSettingViewController"];
-    
-//    AppSettingViewController * appSettingVC = [storyboard instantiateViewControllerWithIdentifier:@"AppSettingViewController"];
-
-
-    
-    
     [self.navigationController pushViewController:appSettingVC animated:YES];
 }
 
 
+#pragma mark - UserHeaderViewDelegate 
+
+- (void)pushToUserInfoViewController {
+    
+    UserInfoViewController * userInfoViewController = [[UserInfoViewController alloc]init];
+    userInfoViewController.userBaseModel = self.huobanUserBaseInfoModel;
+
+//    UserInfoEditeViewController * userInfoViewController = [[UserInfoEditeViewController alloc]init];
+//    userInfoViewController.userBaseModel = self.huobanUserBaseInfoModel;
+    
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:userInfoViewController animated:YES];
+    
+#warning doing
+    
+}
+
 #pragma mark - segmented代理方法
+
 /**segmented代理方法*/
 - (void)segmentedControlSelectAtIndex:(NSInteger)index {
     NSLog(@"%zi",index);
@@ -799,6 +809,22 @@ HttpClassSelf *httpClassUserMessage;
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
+#pragma mark - 显示／隐藏 TabBar
+- (void)hideTabBar {
+    if (self.tabBarController.tabBar.hidden == YES) {
+        return;
+    }
+    self.tabBarController.tabBar.hidden = YES;
+}
+
+- (void)showTabBar {
+    if (self.tabBarController.tabBar.hidden == NO)
+    {
+        return;
+    }
+    self.tabBarController.tabBar.hidden = NO;
+}
+
 
 #pragma mark 返回“创建项目”的View
 - (UIView *) createProjectHeaderView {
@@ -848,6 +874,7 @@ HttpClassSelf *httpClassUserMessage;
 //    self.callTextLabel.hidden = !self.callTextLabel.hidden;
     [self.userTableView reloadData];
 }
+
 
         /*
 #pragma mark - Navigation

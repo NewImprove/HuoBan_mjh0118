@@ -1,25 +1,24 @@
 //
-//  UserHeaderView.h
+//  UserInfoHeader.h
 //  huoban
 //
-//  Created by 马锦航 on 15/12/14.
-//  Copyright © 2015年 lyc. All rights reserved.
+//  Created by 马锦航 on 16/1/11.
+//  Copyright © 2016年 lyc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-
 @protocol UserHeaderViewClickDelegate <NSObject>
 
-- (void) pushToUserInfoViewController;
+- (void) headerViewClick;
 
 @end
 
 
-@interface UserHeaderView : UIView
-
+@interface UserInfoHeader : UIView
 
 @property (nonatomic,strong) id<UserHeaderViewClickDelegate>delegate;
+
 
 @property (nonatomic,strong) UIButton * userHeaderButton;
 
@@ -29,4 +28,3 @@
 
 
 @end
-
