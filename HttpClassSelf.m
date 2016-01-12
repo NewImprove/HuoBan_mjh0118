@@ -225,7 +225,7 @@
 //    
 //}
 
-//
+//保存个人信息
 -(void)UpdateUserSettingSetUser:(NSString*)steUser setToken:(NSString*)strToken setImage:(NSString*)steImage setName:(NSString*)strName setSex:(NSString*)strSex setAddress:(NSString*)strAddress setSign:(NSString*)strSign setDesc:(NSString*)strDesc payName:(NSString *)strPayName payMobile:(NSString *)strPayMobile payPostCode:(NSString *)strPostCode CallBackYES:(CallBackYES)BlockYES CallBackNO:(CallBackNO)BlockNO{
     
     NSString *path = [[NSString alloc] initWithFormat:@"/user/profile/user-%@/%@",steUser,strToken];

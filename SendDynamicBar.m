@@ -169,7 +169,6 @@ NSString *_iOSSizeSendDynamic;
 - (void)keyboardWillShow:(NSNotification*)notification{
     CGRect _keyboardRect = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     NSLog(@"%f-%f-%f-%f",_keyboardRect.origin.y,_keyboardRect.size.height,[self getHeighOfWindow]-CGRectGetMaxY(self.frame),CGRectGetMinY(self.frame));
-    
     //如果self在键盘之下 才做偏移
     if ([self convertYToWindow:CGRectGetMaxY(self.originalFrame)]>=_keyboardRect.origin.y)
     {
@@ -229,11 +228,8 @@ NSString *_iOSSizeSendDynamic;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
-
 {
-    
     [self.textField resignFirstResponder];
-    
     return YES;
     
 }

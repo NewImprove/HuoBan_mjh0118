@@ -698,6 +698,7 @@ HttpClassSelf *httpClassUserMessage;
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     AppSettingViewController * appSettingVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"AppSettingViewController"];
+    
     [self.navigationController pushViewController:appSettingVC animated:YES];
 }
 
@@ -706,8 +707,12 @@ HttpClassSelf *httpClassUserMessage;
 
 - (void)pushToUserInfoViewController {
     
+    
+    
     UserInfoViewController * userInfoViewController = [[UserInfoViewController alloc]init];
     userInfoViewController.userBaseModel = self.huobanUserBaseInfoModel;
+    
+//    userInfoViewController.frame = [UIScreen mainScreen].bounds;
 
 //    UserInfoEditeViewController * userInfoViewController = [[UserInfoEditeViewController alloc]init];
 //    userInfoViewController.userBaseModel = self.huobanUserBaseInfoModel;

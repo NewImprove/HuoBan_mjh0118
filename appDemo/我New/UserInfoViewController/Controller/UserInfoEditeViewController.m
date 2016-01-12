@@ -31,10 +31,10 @@
 @property (nonatomic,strong) UIView * userFootView;                         //底部View
 
 
-@property (nonatomic,strong) UserInfoEditTableViewCell * userName;
-@property (nonatomic,strong) UserInfoEditTableViewCell * userSex;
-@property (nonatomic,strong) UserInfoEditTableViewCell * userProfession;
-@property (nonatomic,strong) UserInfoEditTableViewCell * userAdress;
+@property (nonatomic,strong) UITextField * userName;
+@property (nonatomic,strong) UITextField * userSex;
+@property (nonatomic,strong) UITextField * userProfession;
+@property (nonatomic,strong) UITextField * userAdress;
 @property (nonatomic,strong) UITextView * userDescribe;
 
 @end
@@ -76,36 +76,41 @@
     if (!_userInfoTableView) {
         _userInfoTableView = [UIView new];
         _userInfoTableView.frame = CGRectMake(12, self.userHeaderView.frame.size.height, Main_Screen_Width - 12*2, 61*4);
+        [_userInfoTableView addSubview:self.userName];
+        [_userInfoTableView addSubview:self.userSex];
+        [_userInfoTableView addSubview:self.userProfession];
+        [_userInfoTableView addSubview:self.userAdress];
+        [_userInfoTableView addSubview:self.userDescribe];
     }
     return _userInfoTableView;
 }
 
-- (UserInfoEditTableViewCell *)userName {
+- (UITextField *)userName {
     if (!_userName) {
-        _userName = [UserInfoEditTableViewCell new];
-        _userName.textPlaceTitle = @"姓名";
+        _userName = [UITextField new];
+//        _userName.textPlaceTitle = @"姓名";
     }
     return _userName;
 }
 
-- (UserInfoEditTableViewCell *)userSex {
+- (UITextField *)userSex {
     if (!_userSex) {
-        _userSex = [UserInfoEditTableViewCell new];
-        _userSex.textPlaceTitle = @"性别";
+        _userSex = [UITextField new];
+//        _userSex.textPlaceTitle = @"性别";
     }
     return _userSex;
 }
-- (UserInfoEditTableViewCell *)userProfession {
+- (UITextField *)userProfession {
     if (!_userProfession) {
-        _userProfession = [UserInfoEditTableViewCell new];
-        _userProfession.textPlaceTitle = @"职业";
+        _userProfession = [UITextField new];
+//        _userProfession.textPlaceTitle = @"职业";
     }
     return _userProfession;
 }
-- (UserInfoEditTableViewCell *)userAdress {
+- (UITextField *)userAdress {
     if (!_userAdress) {
-        _userAdress = [UserInfoEditTableViewCell new];
-        _userAdress.textPlaceTitle = @"所在地";
+        _userAdress = [UITextField new];
+//        _userAdress.textPlaceTitle = @"所在地";
     }
     return _userAdress;
 }
@@ -183,6 +188,8 @@
 
 - (void) rightBarButtonAction {
     
+    NSLog(@"rightAction");
+//    UpdateUserSettingSetUser
 }
 
 
