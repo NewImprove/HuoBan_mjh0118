@@ -13,4 +13,7 @@
 
 @property (nonatomic,strong) HuoBanUserProjectData * model;
 
+@property (nonatomic,strong) UIButton * objectJoin;
+
+
 @end

@@ -11,9 +11,6 @@
 #import "HttpClassSelf.h"
 
 
-//#define HTTPAddHuoBan  @"api.huoban.io:8877"
-//服务器测试地址
-//#define HTTPAddHuoBan  @"123.57.33.133:8888"
 
 // 服务器地址
 static NSString *const kBaseURLString = @"http://api.huoban.io:8877";

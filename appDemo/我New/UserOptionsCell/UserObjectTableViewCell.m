@@ -32,7 +32,6 @@
 
 @property (nonatomic,strong) UILabel * objectState;
 
-@property (nonatomic,strong) UIButton * objectJoin;
 
 
 @end
@@ -105,6 +104,7 @@
         [_objectJoin setBackgroundColor:objectJoin_group_bgColor];
         _objectJoin.layer.cornerRadius = 6;
         _objectJoin.titleLabel.font = PingFangSC(12);
+//        [_objectJoin addTarget:self action:@selector(joinButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _objectJoin;
 }
@@ -174,6 +174,8 @@
 }
 
 //- (void)
+
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

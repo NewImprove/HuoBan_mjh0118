@@ -335,6 +335,8 @@ HttpClassSelf *httpClassUserMessage;
                 cell = [[UserObjectTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:UserObjectTableViewCellDequeueIdentifier];
             }
             cell.model = self.userProjectModel.data[indexPath.row];
+            [cell.objectJoin addTarget:self action:@selector(joinPushAction:) forControlEvents:UIControlEventTouchUpInside];
+            
             return cell;
         }
             break;
@@ -442,20 +444,15 @@ HttpClassSelf *httpClassUserMessage;
             
             
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-            
-            AppSettingViewController * appSettingVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"AppSettingViewController"];
+//
+//            AppSettingViewController * appSettingVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"AppSettingViewController"];
             
             
             TalkViewController * talkViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"TalkViewController"];
-//            talkViewController.view.frame = [UIScreen mainScreen].bounds;
             NSLog(@"%@",model.idField);
-//            TalkViewController * talkViewController = [[TalkViewController alloc]init];
             talkViewController.strfeedID = model.idField;
             
             [self presentViewController:talkViewController animated:YES completion:nil];
-//            [self.navigationController pushViewController:talkViewController animated:YES];
-//            [self.navigationController pushViewController:appSettingVC animated:YES];
-//            [self performSegueWithIdentifier:@"Projectdetails" sender:model.idField];
             
         }
             break;
@@ -872,6 +869,26 @@ HttpClassSelf *httpClassUserMessage;
 }
 
 
+#pragma mark 加入群组按钮跳转
+- (void) joinPushAction:(UIButton *)sender {
+    
+    
+    
+    NSLog(@"joinPushAction.title=%@",sender.titleLabel.text);
+//    if (sender.titleLabel) {
+    
+//    }
+    
+#warning test
+//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    
+//    AppSettingViewController * appSettingVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"AppSettingViewController"];
+
+    
+//    [self.navigationController pushViewController:appSettingVC animated:YES];
+    
+    
+}
 - (void) openCreateProjectView {
     NSLog(@"openCreateProjectView");
     self.createProjectIsOpen = !self.createProjectIsOpen;
