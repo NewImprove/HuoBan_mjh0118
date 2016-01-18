@@ -53,7 +53,6 @@ static NSString *const kBaseURLString = @"http://api.huoban.io:8877";
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         if (failure == nil) return;
         failure(error);
-        
     }];
 }
 

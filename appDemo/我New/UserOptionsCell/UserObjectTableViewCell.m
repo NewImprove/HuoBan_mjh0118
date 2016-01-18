@@ -104,6 +104,8 @@
         [_objectJoin setBackgroundColor:objectJoin_group_bgColor];
         _objectJoin.layer.cornerRadius = 6;
         _objectJoin.titleLabel.font = PingFangSC(12);
+        
+        
 //        [_objectJoin addTarget:self action:@selector(joinButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _objectJoin;
@@ -131,33 +133,62 @@
     
     NSLog(@"%@",[model toDictionary]);
     //注：type : create(创建的项目),order(加入的项目),focus(关注的项目),end(结束的项目)
-    if ([model.type isEqualToString:@"end"]) {
-        //项目结束处理
-        if (model.factMoney >= model.wantedMoney) {
-            NSLog(@"成功项目");
-            self.objectState.text = @"成功!";
-            [self.objectJoin setTitle:@"去群组" forState:UIControlStateNormal];
+    
+    if ([model.type isEqualToString:@"end"]) {      //判断是否是已经结束
+        self.objectState.text = @"成功！";
+        [self.objectJoin setTitle:@"去群组" forState:UIControlStateNormal];
+        if (model.factMoney < model.wantedMoney) {        //判断是否是失败项目
+            self.objectState.text = @"失败";
         }
-        else {
-            NSLog(@"失败项目");
-            self.objectState.text = @"已结束";
+        
+    } else {                                                //正在进行的项目
+//        model
+        if ([model.type isEqualToString:@"create"]) {
+            self.objectState.text = @"进行中";
             [self.objectJoin setTitle:@"去群组" forState:UIControlStateNormal];
+
         }
+        if ([model.type isEqualToString:@"focus"]) {
+            self.objectState.text = @"已关注";
+            [self.objectJoin setTitle:@"加入他们" forState:UIControlStateNormal];
+        }
+        if ([model.type isEqualToString:@"order"]) {
+            self.objectState.text = [NSString stringWithFormat:@"已支持%zi元",model.money];
+            [self.objectJoin setTitle:@"支持更多" forState:UIControlStateNormal];
+        }
+        
     }
-    else if ([model.type isEqualToString:@"create"]) {
-        //创建的项目
-        self.objectState.text = @"进行中";
-    }
-    else if ([model.type isEqualToString:@"focus"]) {
-        //关注的项目
-        self.objectState.text = @"已关注";
-        [self.objectJoin setTitle:@"加入他们" forState:UIControlStateNormal];
-    }
-    else if ([model.type isEqualToString:@"order"]) {
-        //加入的项目
-        self.objectState.text = [NSString stringWithFormat:@"已支持%zi元",model.money];
-        [self.objectJoin setTitle:@"支持更多" forState:UIControlStateNormal];
-    }
+    
+    
+    
+//    if ([model.type isEqualToString:@"end"]) {
+//        //项目结束处理
+//        if (model.factMoney >= model.wantedMoney) {
+//            NSLog(@"成功项目");
+//            self.objectState.text = @"成功!";
+//            [self.objectJoin setTitle:@"去群组" forState:UIControlStateNormal];
+//            
+//        }
+//        else {
+//            NSLog(@"失败项目");
+//            self.objectState.text = @"已结束";
+//            [self.objectJoin setTitle:@"去群组" forState:UIControlStateNormal];
+//        }
+//    }
+//    else if ([model.type isEqualToString:@"create"]) {
+//        //创建的项目
+//        self.objectState.text = @"进行中";
+//    }
+//    else if ([model.type isEqualToString:@"focus"]) {
+//        //关注的项目
+//        self.objectState.text = @"已关注";
+//        [self.objectJoin setTitle:@"加入他们" forState:UIControlStateNormal];
+//    }
+//    else if ([model.type isEqualToString:@"order"]) {
+//        //加入的项目
+//        self.objectState.text = [NSString stringWithFormat:@"已支持%zi元",model.money];
+//        [self.objectJoin setTitle:@"支持更多" forState:UIControlStateNormal];
+//    }
     
 }
 

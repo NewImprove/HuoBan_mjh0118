@@ -10,4 +10,7 @@
 
 @interface UserSelfMessageViewController : UIViewController
 
+- (instancetype)initForOtherUserWithUserID:(NSString *)userID;
+
+
 @end

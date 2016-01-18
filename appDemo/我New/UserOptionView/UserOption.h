@@ -32,8 +32,6 @@
 
 //项的个数
 @property (nonatomic,assign) NSInteger segmentCount;
-
-- (instancetype)initWithFrame:(CGRect)frame userOptionsArray:(NSArray *)userOptionsArray;
-
+- (instancetype)initWithFrame:(CGRect)frame userOptionsArray:(NSArray *)userOptionsArray WithIsSelfViewController:(BOOL)isSelfVC;
 
 @end

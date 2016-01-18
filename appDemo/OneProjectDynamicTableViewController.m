@@ -652,7 +652,12 @@ CGSize _iOSDeviceSizeOneProject;
 
 - (IBAction)buttonClose:(id)sender {
     
+    
+    //加上这么一句
+    [self.navigationController popViewControllerAnimated:YES];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 #define mark 「+」发动态按钮

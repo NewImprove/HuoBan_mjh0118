@@ -407,6 +407,12 @@
 		9C9D7A981C3142DC00E1A21D /* HuoBanUserProjectData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7A951C3142DC00E1A21D /* HuoBanUserProjectData.m */; };
 		9C9D7A991C3142DC00E1A21D /* HuoBanUserProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7A971C3142DC00E1A21D /* HuoBanUserProjectModel.m */; };
 		9C9D7AC41C325CC600E1A21D /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D7AC31C325CC600E1A21D /* HttpTool.m */; };
+		9CFE975B1C48CB4D0015DC15 /* profession@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CFE97551C48CB4D0015DC15 /* profession@3x.png */; };
+		9CFE975C1C48CB4D0015DC15 /* profession@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CFE97561C48CB4D0015DC15 /* profession@2x.png */; };
+		9CFE975D1C48CB4D0015DC15 /* location@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CFE97571C48CB4D0015DC15 /* location@3x.png */; };
+		9CFE975E1C48CB4D0015DC15 /* location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CFE97581C48CB4D0015DC15 /* location@2x.png */; };
+		9CFE975F1C48CB4D0015DC15 /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CFE97591C48CB4D0015DC15 /* back@3x.png */; };
+		9CFE97601C48CB4D0015DC15 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CFE975A1C48CB4D0015DC15 /* back@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1062,6 +1068,12 @@
 		9C9D7A971C3142DC00E1A21D /* HuoBanUserProjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuoBanUserProjectModel.m; sourceTree = "<group>"; };
 		9C9D7AC21C325CC600E1A21D /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
 		9C9D7AC31C325CC600E1A21D /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
+		9CFE97551C48CB4D0015DC15 /* profession@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profession@3x.png"; sourceTree = "<group>"; };
+		9CFE97561C48CB4D0015DC15 /* profession@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profession@2x.png"; sourceTree = "<group>"; };
+		9CFE97571C48CB4D0015DC15 /* location@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location@3x.png"; sourceTree = "<group>"; };
+		9CFE97581C48CB4D0015DC15 /* location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location@2x.png"; sourceTree = "<group>"; };
+		9CFE97591C48CB4D0015DC15 /* back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@3x.png"; sourceTree = "<group>"; };
+		9CFE975A1C48CB4D0015DC15 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1788,6 +1800,7 @@
 		006683C41B882EB700D1D5B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9CFE97541C48CB0C0015DC15 /* 他人信息 */,
 				9C72EDA51C327ECA00511A57 /* icon */,
 				9C9D7A551C2BEDA500E1A21D /* 登录IconNew */,
 				0042FED81C0EA5E6006381FA /* payChoseButton */,
@@ -3008,6 +3021,19 @@
 			name = HuoBanUserProjectModel;
 			sourceTree = "<group>";
 		};
+		9CFE97541C48CB0C0015DC15 /* 他人信息 */ = {
+			isa = PBXGroup;
+			children = (
+				9CFE97551C48CB4D0015DC15 /* profession@3x.png */,
+				9CFE97561C48CB4D0015DC15 /* profession@2x.png */,
+				9CFE97571C48CB4D0015DC15 /* location@3x.png */,
+				9CFE97581C48CB4D0015DC15 /* location@2x.png */,
+				9CFE97591C48CB4D0015DC15 /* back@3x.png */,
+				9CFE975A1C48CB4D0015DC15 /* back@2x.png */,
+			);
+			name = "他人信息";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -3118,6 +3144,7 @@
 				006211EE1BC0D5120041C79A /* woNO@2x.png in Resources */,
 				006BF3301BAD607A0094C86A /* PEPhotoCropEditorBorder.png in Resources */,
 				00FB16381C22D88A006DB174 /* morePreson@3x.png in Resources */,
+				9CFE97601C48CB4D0015DC15 /* back@2x.png in Resources */,
 				00F98C1E1BC7A4D500115116 /* moviePlay.png in Resources */,
 				00322C471BC10D5C0088B102 /* Default-568h@2x.png in Resources */,
 				006A144B1BD917AB0072D13F /* share12@2x.png in Resources */,
@@ -3131,6 +3158,7 @@
 				00818DA31BFF6ADC00AA4B28 /* addICON_grey_3x.png in Resources */,
 				00818D741BFF47F000AA4B28 /* setting@3x.png in Resources */,
 				00F98C131BC7A4D500115116 /* movieBackwardSelected@2x.png in Resources */,
+				9CFE975B1C48CB4D0015DC15 /* profession@3x.png in Resources */,
 				9C72EDB31C327ECA00511A57 /* 我_私信@3x.png in Resources */,
 				008C40581C15904400672F74 /* UMSCommentInputController.xib in Resources */,
 				005C07C11BDB7CF50027D284 /* womenNO@3x.png in Resources */,
@@ -3148,6 +3176,7 @@
 				006276D71BE85B0A008B2689 /* buttonPayDown72@1x.png in Resources */,
 				00F98C1A1BC7A4D500115116 /* movieFullscreen.png in Resources */,
 				00818D6F1BFF460100AA4B28 /* back_white_3x.png in Resources */,
+				9CFE975C1C48CB4D0015DC15 /* profession@2x.png in Resources */,
 				006211EF1BC0D5120041C79A /* woYES@2x.png in Resources */,
 				00B7647F1BF123D3001BA433 /* huoban_startup-4-retina.png in Resources */,
 				00B7648E1BF1DFAD001BA433 /* womenEmpry_add@2x.png in Resources */,
@@ -3188,6 +3217,7 @@
 				9C9D7A5E1C2BEDD200E1A21D /* 不可点击确认@2x.png in Resources */,
 				00F98C101BC7A4D500115116 /* movieBackward.png in Resources */,
 				00818D961BFF553C00AA4B28 /* details_UnLove@3x.png in Resources */,
+				9CFE975F1C48CB4D0015DC15 /* back@3x.png in Resources */,
 				00B764821BF123D3001BA433 /* huoban_startup-5.5HD.png in Resources */,
 				9C72EDB51C327ECA00511A57 /* 系统设置@3x.png in Resources */,
 				00818D9E1BFF60EA00AA4B28 /* ProjectJoined@2x.png in Resources */,
@@ -3219,6 +3249,7 @@
 				00818D791BFF488000AA4B28 /* close_blue_@2x.png in Resources */,
 				00F98C1D1BC7A4D500115116 /* moviePause@2x.png in Resources */,
 				00F98C111BC7A4D500115116 /* movieBackward@2x.png in Resources */,
+				9CFE975E1C48CB4D0015DC15 /* location@2x.png in Resources */,
 				006276D81BE85B0A008B2689 /* buttonPayDown72@2x.png in Resources */,
 				0044D9F61BC57D9F006DA740 /* CloseBlue@2x.png in Resources */,
 				00F98C1F1BC7A4D500115116 /* moviePlay@2x.png in Resources */,
@@ -3258,6 +3289,7 @@
 				9C72EDB01C327ECA00511A57 /* 展开提醒@2x.png in Resources */,
 				005C07C01BDB7CF50027D284 /* womenYES@3x.png in Resources */,
 				008C405B1C15904400672F74 /* UMShareEditViewControlleriPad.xib in Resources */,
+				9CFE975D1C48CB4D0015DC15 /* location@3x.png in Resources */,
 				00686D1A1BD769840040712C /* buttonPayUP100@3x.png in Resources */,
 				00FB16371C22D88A006DB174 /* morePreson@2x.png in Resources */,
 				00818D7A1BFF488000AA4B28 /* close_blue_@3x.png in Resources */,

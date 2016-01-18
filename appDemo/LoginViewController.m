@@ -196,6 +196,8 @@ NSString *_iOSSizeLogin;
         
         if([_resLoginDic[@"status"] isEqualToString:@"success" ]){
 
+            
+#warning 登录后的操作
             //登陆先清除缓存
             NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
             
